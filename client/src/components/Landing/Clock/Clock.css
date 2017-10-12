@@ -1,0 +1,12 @@
+.clock-wrapper{
+  margin: auto;
+  margin-top:20%;
+  width: 500px;
+}
+h1{
+  text-align:center;
+}
+p.quote{
+  text-align:center;
+  padding-top:20px;
+}

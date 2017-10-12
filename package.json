@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "propel",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,9 +19,17 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.0.1",
     "mongoose": "^4.11.7",
-    "react-router-dom": "^4.1.2"
+    "node-schedule": "^1.2.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "react-materialize": "^1.0.15",
+    "react-router-dom": "^4.2.2",
+    "validator": "^9.0.0"
   }
 }

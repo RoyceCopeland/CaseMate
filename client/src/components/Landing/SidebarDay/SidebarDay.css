@@ -1,0 +1,18 @@
+.small{
+    font-size: .6em;
+}
+#sidenav_0{
+  padding:10px 10px 10px 10px;
+}
+hr{
+  margin-bottom:9px;
+}
+.side-nav a{
+  padding:0px;
+  color:white;
+}
+.side-nav li{
+  border-bottom:1px solid white;
+  padding-top:4px;
+  padding-bottom:4px;
+}
