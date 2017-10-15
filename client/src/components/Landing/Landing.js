@@ -10,8 +10,10 @@ import Nav from "./Nav";
 import SidebarDay from "./SidebarDay";
 import Clock from "./Clock";
 import backgroundAPI from "../../utils/backgroundAPI";
+import {Timeline, TimelineEvent, TimelineBlip} from "./Timeline";
 
 import "./Landing.css";
+
 
 
 // The ...props means, spread all of the passed props onto this element
@@ -39,7 +41,6 @@ class Landing extends Component {
             { event: "practice estimating wind speeds", time:8 , duration: .5 }
         ],
         quote: "Quotey quote", 
-        streak: "1",
         backgroundURL: ""
     };
 
@@ -85,7 +86,7 @@ class Landing extends Component {
         return (
             <div>
                 <SidebarDay events={this.state.events}/>
-                <Nav streak="22" />
+                <Nav />
                 <Clock 
                 time={this.state.time}
                 quote={"There is no excellence in archery without great labour."} />

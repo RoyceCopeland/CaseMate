@@ -1,5 +1,5 @@
 import React from "react";
-import "./Nav.css";
+//import "./Nav.css";
 
 const Nav = props => 
 <div class="navbar-fixed">
@@ -8,11 +8,11 @@ const Nav = props =>
     <div class="row">
       <div class="col s12">
         <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-        <a href="https://codepen.io/collection/nbBqgY/" class="brand-logo" target="_blank">Materialize Framework</a>
+        <a href="#" class="brand-logo" target="_blank">CaseMate Client Portal</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
-          <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
-          <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">JavaScript</a></li>
+          <li><a href="#" target="_blank">New Journal Entry</a></li>
+          <li><a href="#" target="_blank">FAQ</a></li>
+          <li><a href="#" target="_blank">Log Out</a></li>
         </ul>
       </div>
     </div>
