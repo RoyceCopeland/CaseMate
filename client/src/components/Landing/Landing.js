@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-//import Agenda from "./Agenda";
-//import DayPlanner from "./DayPlanner";
+import Agenda from "./Agenda";
+import DayPlanner from "./DayPlanner";
 //import Quote from "./Quote";
 //import Streak from "./Streak";
 //import Skill from "./Month/Skill"
@@ -8,8 +8,8 @@ import React, { Component } from "react";
 //import API from "../../utils/API";
 import Nav from "./Nav";
 import SidebarDay from "./SidebarDay";
-import Clock from "./Clock";
-import backgroundAPI from "../../utils/backgroundAPI";
+//import Clock from "./Clock";
+//import backgroundAPI from "../../utils/backgroundAPI";
 import {Timeline, TimelineEvent, TimelineBlip} from "./Timeline";
 
 import "./Landing.css";
@@ -48,13 +48,13 @@ class Landing extends Component {
     componentDidMount() {
         this.loadBackground();
     }
-    loadBackground(){
-        backgroundAPI.getBackground()
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+   //  loadBackground(){
+   //      backgroundAPI.getBackground()
+   //      .then(res => console.log(res))
+   //      .catch(err => console.log(err));
 
-        //this.setState({ breeds: res.data.message })
-    }
+   //      //this.setState({ breeds: res.data.message })
+   //  }
 
 
 
