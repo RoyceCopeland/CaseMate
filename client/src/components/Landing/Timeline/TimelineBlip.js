@@ -13,6 +13,7 @@ class TimelineBlip extends Component {
   }
 
   render() {
+    console.log("TimelineBlip");
     const { title, iconStyle, icon, iconColor, ...otherProps } = this.props
     return (
       <div style={{...s.event, marginBottom: 50}}>

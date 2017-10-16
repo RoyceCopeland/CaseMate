@@ -5,6 +5,7 @@ import s from './Styles'
 class Timeline extends Component {
 
   render () {
+      console.log("Timeline.js");
     return (
       <div>
         <section style={s.container} {...this.props}>

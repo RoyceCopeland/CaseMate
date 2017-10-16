@@ -56,15 +56,7 @@ class Landing extends Component {
         //this.setState({ breeds: res.data.message })
     }
 
-//   loadLanding = () => {
-//      API.getSkills().then(res => this.setState({landing: skills: []}).catch(err => console.log(err));
-//      API.getTodo().then(res => this.setState({landing: todo: []}).catch(err => console.log(err));
-//      API.getEvent().then(res => this.setState({landing: events: []}).catch(err => console.log(err));        
-//      API.getQuote().then(res => this.setState({landing: quote: ""}).catch(err => console.log(err));
-//      API.getStreak().then(res => this.setState({landing: streak: ""}).catch(err => console.log(err));
-//      };
-//  
-// }
+
 
     componentDidMount() {
         this.intervalID = setInterval(
@@ -87,10 +79,31 @@ class Landing extends Component {
             <div>
                 <SidebarDay events={this.state.events}/>
                 <Nav />
-                <Clock 
+                {/* <Timeline/>
+                <TimelineEvent/>
+                <TimelineBlip/> */}
+                <Timeline>
+                    <TimelineEvent title="John Doe sent a SMS"     /*title=props.title*/
+                                createdAt="2016-09-12 10:06 PM"
+                                icon={<i className="material-icons md-18">textsms</i>}
+                    >
+                        I received the payment for $543. Should be shipping the item within a couple of hours.
+                    </TimelineEvent>
+                    <TimelineEvent
+                        title="You sent an email to John Doe"
+                        createdAt="2016-09-11 09:06 AM"
+                        icon={<i className="material-icons md-18">email</i>}
+                    >
+                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                            gentle reminder if you are on track already!
+                    </TimelineEvent>
+                </Timeline>
+
+              {/* <Clock 
                 time={this.state.time}
-                quote={"There is no excellence in archery without great labour."} />
-            </div>
+                quote={"There is no excellence in archery without great labour."} /> */}
+              </div>
         );
     }
 }
