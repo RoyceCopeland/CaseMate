@@ -2,10 +2,13 @@ import React, {Component} from "react";
 import PropTypes from 'prop-types'
 import s from './Styles'
 
+
+
+
 class Timeline extends Component {
 
   render () {
-      console.log("Timeline.js");
+ //     console.log("Timeline.js");
     return (
       <div>
         <section style={s.container} {...this.props}>
