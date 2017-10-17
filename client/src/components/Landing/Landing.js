@@ -11,7 +11,7 @@ import SidebarDay from "./SidebarDay";
 //import Clock from "./Clock";
 //import backgroundAPI from "../../utils/backgroundAPI";
 import {Timeline, TimelineEvent, TimelineBlip} from "./Timeline";
-
+import Entries from "../Landing/EntriesPage";
 import "./Landing.css";
 
 
@@ -76,69 +76,80 @@ class Landing extends Component {
     }
     render() {
         return (
-            <div>
+        <div>   
+             <div>
                 <SidebarDay events={this.state.events}/>
                 <Nav />
-            
-                <Timeline onMouseMove={this.handleMouseMove}>
+             </div>
+
+                     <div class="row">
+                         <Timeline onMouseMove={this.handleMouseMove}>
                     
-                    <TimelineEvent title="John Doe sent a SMS"     /*title=props.title*/
+                          <TimelineEvent title="John Doe sent a SMS"     /*title=props.title*/
                                 createdAt="2016-09-12 10:06 PM"
                              //   icon={<i className="material-icons md-18">textsms</i>}
-                    >
-                        I received the payment for $543. Should be shipping the item within a couple of hours.
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM"
-                     //   icon={<i className="material-icons md-18">email</i>}
-                    >
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM"
-                     //   icon={<i className="material-icons md-18">email</i>}
-                    >
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM"
-                     //   icon={<i className="material-icons md-18">email</i>}
-                    >
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM"
-                     //   icon={<i className="material-icons md-18">email</i>}
-                    >
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                    <TimelineEvent
-                        title="You sent an email to John Doe"
-                        createdAt="2016-09-11 09:06 AM"
-                     //   icon={<i className="material-icons md-18">email</i>}
-                    >
-                        Like we talked, you said that you would share the shipment details? This is an urgent order and so I
-                            am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
-                            gentle reminder if you are on track already!
-                    </TimelineEvent>
-                </Timeline>
+                               >
+                               I received the payment for $543. Should be shipping the item within a couple of hours.
+                              </TimelineEvent>
+                             <TimelineEvent
+                               title="You sent an email to John Doe"
+                              createdAt="2016-09-11 09:06 AM"
+                               //   icon={<i className="material-icons md-18">email</i>}
+                                  >
+                              Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                              am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                                 gentle reminder if you are on track already!
+                                </TimelineEvent>
+                                 <TimelineEvent
+                              title="You sent an email to John Doe"
+                               createdAt="2016-09-11 09:06 AM"
+                               //   icon={<i className="material-icons md-18">email</i>}
+                                 >
+                              Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                              am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                               gentle reminder if you are on track already!
+                                </TimelineEvent>
+                              <TimelineEvent
+                                title="You sent an email to John Doe"
+                               createdAt="2016-09-11 09:06 AM"
+                               //   icon={<i className="material-icons md-18">email</i>}
+                               >
+                               Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                               am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                                gentle reminder if you are on track already!
+                                </TimelineEvent>
+                               <TimelineEvent
+                                 title="You sent an email to John Doe"
+                              createdAt="2016-09-11 09:06 AM"
+                                //   icon={<i className="material-icons md-18">email</i>}
+                                >
+                                    Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                                  am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                                  gentle reminder if you are on track already!
+                              </TimelineEvent>
+                              <TimelineEvent
+                                  title="You sent an email to John Doe"
+                               createdAt="2016-09-11 09:06 AM"
+                                  //   icon={<i className="material-icons md-18">email</i>}
+                                      >
+                                   Like we talked, you said that you would share the shipment details? This is an urgent order and so I
+                                       am losing patience. Can you expedite the process and pls do share the details asap. Consider this a
+                                        gentle reminder if you are on track already!
+                                </TimelineEvent>
+                                </Timeline>
+               
 
-              {/* <Clock 
-                time={this.state.time}
-                quote={"There is no excellence in archery without great labour."} /> */}
-              </div>
+
+
+                             <Entries/>
+           
+
+                                       {/* <Clock 
+                                 time={this.state.time}
+                                        quote={"There is no excellence in archery without great labour."} /> */}
+                        </div>
+
+          </div>
         );
     }
 }
