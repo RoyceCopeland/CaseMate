@@ -11,7 +11,6 @@ import SidebarDay from "./SidebarDay";
 //import Clock from "./Clock";
 //import backgroundAPI from "../../utils/backgroundAPI";
 import {Timeline, TimelineEvent, TimelineBlip} from "./Timeline";
-import { Input, TextArea, FormBtn } from "./Entries";
 
 import "./Landing.css";
 

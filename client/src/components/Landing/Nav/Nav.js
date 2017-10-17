@@ -1,5 +1,5 @@
 import React from "react";
-//import "./Nav.css";
+//import App from "./EntriesPage/App";
 
 const Nav = props => 
 <div class="navbar-fixed">
@@ -10,7 +10,7 @@ const Nav = props =>
         <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
         <a href="#" class="brand-logo" target="_blank">CaseMate Client Portal</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#" target="_blank">New Journal Entry</a></li>
+          <li><a href="./EntriesPage/App" target="_blank">New Journal Entry</a></li>
           <li><a href="#" target="_blank">FAQ</a></li>
           <li><a href="#" target="_blank">Log Out</a></li>
         </ul>
