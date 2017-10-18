@@ -13,6 +13,8 @@ import SidebarDay from "./SidebarDay";
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "../Landing/EntriesPage";
 import "./Landing.css";
+import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
+
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -47,6 +49,15 @@ class Landing extends Component {
   //   backgroundURL: ""
   // };
 
+ /*  state = {
+      entries: [
+          {title: "Joe sent something",
+            createdAt: "2016-09-12 10:06 PM",
+            blurb:  "I received the payment for $543. Should be shipping the item within a couple of hours."
+            },
+            {}
+        ]
+  } */
 
   // When the component mounts, load all component data and save them to this.state.landing
   componentDidMount() {
@@ -62,7 +73,10 @@ class Landing extends Component {
 
   componentDidMount() {
     this.intervalID = setInterval(() => this.tick(), 1000);
+    //fetch stuff from db and setState({entries});
   }
+
+  //make a function to get from db on journal entry submit
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -85,8 +99,11 @@ class Landing extends Component {
           <Nav />
         </div>
 
-        <div class="row">
+        <div>
+        <Row id='TimelineBlock'>
+          <Col l={4} m={6} s={12} offset={'l1 m1'}>
           <Timeline onMouseMove={this.handleMouseMove}>
+          {/*Use map here through this.state.entries*/}
             <TimelineEvent
               title="John Doe sent a SMS" /*title=props.title*/
               createdAt="2016-09-12 10:06 PM"
@@ -146,7 +163,8 @@ class Landing extends Component {
               Consider this a gentle reminder if you are on track already!
             </TimelineEvent>
           </Timeline>
-
+          </Col>
+        </Row>
           <Entries />
 
           {/* <Clock 

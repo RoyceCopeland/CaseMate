@@ -35,11 +35,7 @@ class AppWrapper extends React.Component {
 
   render = () =>
     this.state.loggedIn ? (
-      this.state.firstLogin ? (
-        <Scrum />
-      ) : (
         <Landing />
-      )
     ) : (
       <InitialLanding submitForm={this.submitForm} />
     );
