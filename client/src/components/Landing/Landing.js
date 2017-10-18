@@ -27,24 +27,24 @@ function newTime() {
 
 class Landing extends Component {
   // Setting our component's initial state
-  state = {
-    skills: ["skill1", "skill2", "skill3"],
-    subtasks: ["subtask1", "subtask2", "subtask3", "subtask4"],
-    actionItems: ["actionItem1", "actionItem2", "actionItem3"],
-    time: newTime(),
-    todo: ["todo1", "todo2", "todo3"],
-    events: [
-      { event: "drop off kids", time: 6, duration: 1 },
-      { event: "breakfast date", time: 7, duration: 1 },
-      { event: "dentist", time: 13, duration: 1 },
-      { event: "meeting with new client", time: 10, duration: 1.5 },
-      { event: "stackholder meeting", time: 15, duration: 2 },
-      { event: "grocery shop", time: 17, duration: 0.5 },
-      { event: "practice estimating wind speeds", time: 8, duration: 0.5 }
-    ],
-    quote: "Quotey quote",
-    backgroundURL: ""
-  };
+  // state = {
+  //   skills: ["skill1", "skill2", "skill3"],
+  //   subtasks: ["subtask1", "subtask2", "subtask3", "subtask4"],
+  //   actionItems: ["actionItem1", "actionItem2", "actionItem3"],
+  //   time: newTime(),
+  //   todo: ["todo1", "todo2", "todo3"],
+  //   events: [
+  //     { event: "drop off kids", time: 6, duration: 1 },
+  //     { event: "breakfast date", time: 7, duration: 1 },
+  //     { event: "dentist", time: 13, duration: 1 },
+  //     { event: "meeting with new client", time: 10, duration: 1.5 },
+  //     { event: "stackholder meeting", time: 15, duration: 2 },
+  //     { event: "grocery shop", time: 17, duration: 0.5 },
+  //     { event: "practice estimating wind speeds", time: 8, duration: 0.5 }
+  //   ],
+  //   quote: "Quotey quote",
+  //   backgroundURL: ""
+  // };
 
   // When the component mounts, load all component data and save them to this.state.landing
   componentDidMount() {
@@ -75,7 +75,7 @@ class Landing extends Component {
     return (
       <div>
         <div>
-          <SidebarDay events={this.state.events} />
+          {/* <SidebarDay events={this.state.events} /> */}
           <Nav />
         </div>
 
