@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Agenda from "./Agenda";
 import DayPlanner from "./DayPlanner";
+import DayPlanner from "./DayPlanner";
 //import Quote from "./Quote";
 //import Streak from "./Streak";
 //import Skill from "./Month/Skill"
@@ -27,6 +28,7 @@ function newTime() {
 
 class Landing extends Component {
   // Setting our component's initial state
+
   // state = {
   //   skills: ["skill1", "skill2", "skill3"],
   //   subtasks: ["subtask1", "subtask2", "subtask3", "subtask4"],
@@ -46,6 +48,7 @@ class Landing extends Component {
   //   backgroundURL: ""
   // };
 
+<<<<<<< HEAD
   state = {
       entries: [
           {title: "Joe sent something",
@@ -55,6 +58,8 @@ class Landing extends Component {
             {}
         ]
   }
+=======
+>>>>>>> 66e849bf58a72834f0fb87891d3e41a1bcdf1c42
 
   // When the component mounts, load all component data and save them to this.state.landing
   componentDidMount() {
@@ -88,7 +93,11 @@ class Landing extends Component {
     return (
       <div>
         <div>
+
+ 
+
           {/* <SidebarDay events={this.state.events} /> */}
+
           <Nav />
         </div>
 
