@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Agenda from "./Agenda";
 import DayPlanner from "./DayPlanner";
-import DayPlanner from "./DayPlanner";
 //import Quote from "./Quote";
 //import Streak from "./Streak";
 //import Skill from "./Month/Skill"
@@ -14,6 +13,8 @@ import SidebarDay from "./SidebarDay";
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "../Landing/EntriesPage";
 import "./Landing.css";
+import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
+
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -48,8 +49,7 @@ class Landing extends Component {
   //   backgroundURL: ""
   // };
 
-<<<<<<< HEAD
-  state = {
+ /*  state = {
       entries: [
           {title: "Joe sent something",
             createdAt: "2016-09-12 10:06 PM",
@@ -57,9 +57,7 @@ class Landing extends Component {
             },
             {}
         ]
-  }
-=======
->>>>>>> 66e849bf58a72834f0fb87891d3e41a1bcdf1c42
+  } */
 
   // When the component mounts, load all component data and save them to this.state.landing
   componentDidMount() {
@@ -101,7 +99,9 @@ class Landing extends Component {
           <Nav />
         </div>
 
-        <div class="row">
+        <div>
+        <Row id='TimelineBlock'>
+          <Col l={4} m={6} s={12} offset={'l1 m1'}>
           <Timeline onMouseMove={this.handleMouseMove}>
           {/*Use map here through this.state.entries*/}
             <TimelineEvent
@@ -163,7 +163,8 @@ class Landing extends Component {
               Consider this a gentle reminder if you are on track already!
             </TimelineEvent>
           </Timeline>
-
+          </Col>
+        </Row>
           <Entries />
 
           {/* <Clock 

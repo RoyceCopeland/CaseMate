@@ -2,12 +2,11 @@ let style = {
     
       container: {
         position: 'relative',
-        left: '-100px',
         fontSize: '80%',
-        fontWeight: 300,
-        padding: '10px 0',
-        width: '33%',
-        margin: '0 auto'
+        fontWeight: 300
+        // padding: '10px 0',
+        // width: '33%',
+        //margin: '0 auto'
       },
       containerBefore: {
         content: '',

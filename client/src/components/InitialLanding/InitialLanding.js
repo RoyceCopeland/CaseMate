@@ -25,7 +25,7 @@ class InitialLanding extends Component {
     return (
       <div>
         <Row className='wrapper'>
-          <Col m={4} s={12} offset={"m4"}>
+          <Col l={6} m={6} s={12} offset={"m1 l1"}>
             <Tabs className='tab-demo z-depth-1'>
               <Tab title="Sign up" active><SignUp /></Tab>
               <Tab title="Sign in">
