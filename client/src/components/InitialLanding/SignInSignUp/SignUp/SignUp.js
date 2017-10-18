@@ -5,7 +5,7 @@ import {Row, Card, Input, Button} from 'react-materialize'
 const SignUp = props => 
   <Card
     className='grey lighten-3'
-    title='Sign up for Propel'
+    title='Sign up for CaseMate'
     actions={
       <Row>
         <Button waves='light'>Sign up</Button>
