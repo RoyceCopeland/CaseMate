@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Agenda from "./Agenda";
 import DayPlanner from "./DayPlanner";
+import DayPlanner from "./DayPlanner";
 //import Quote from "./Quote";
 //import Streak from "./Streak";
 //import Skill from "./Month/Skill"
