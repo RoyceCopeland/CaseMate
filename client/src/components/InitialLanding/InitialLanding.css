@@ -1,9 +1,11 @@
 .wrapper{
-  padding-top:200px;
+  padding-top:100px;
+  float:left;
 }
 .row{
   margin-bottom:0px;
 }
 .button-signin{
   margin-right:20px;
+
 }

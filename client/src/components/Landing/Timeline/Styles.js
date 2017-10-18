@@ -2,7 +2,7 @@ let style = {
     
       container: {
         position: 'relative',
-       // left: '-200px',
+        left: '-100px',
         fontSize: '80%',
         fontWeight: 300,
         padding: '10px 0',

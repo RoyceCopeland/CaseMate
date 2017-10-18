@@ -46,6 +46,16 @@ class Landing extends Component {
   //   backgroundURL: ""
   // };
 
+  state = {
+      entries: [
+          {title: "Joe sent something",
+            createdAt: "2016-09-12 10:06 PM",
+            blurb:  "I received the payment for $543. Should be shipping the item within a couple of hours."
+            },
+            {}
+        ]
+  }
+
   // When the component mounts, load all component data and save them to this.state.landing
   componentDidMount() {
     this.loadBackground();
@@ -60,7 +70,10 @@ class Landing extends Component {
 
   componentDidMount() {
     this.intervalID = setInterval(() => this.tick(), 1000);
+    //fetch stuff from db and setState({entries});
   }
+
+  //make a function to get from db on journal entry submit
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -81,6 +94,7 @@ class Landing extends Component {
 
         <div class="row">
           <Timeline onMouseMove={this.handleMouseMove}>
+          {/*Use map here through this.state.entries*/}
             <TimelineEvent
               title="John Doe sent a SMS" /*title=props.title*/
               createdAt="2016-09-12 10:06 PM"
