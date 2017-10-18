@@ -1,0 +1,4 @@
+{
+  "dbUri": "mongodb://localhost/casemate",
+  "jwtSecret": "gt bootcamp is neat"
+}

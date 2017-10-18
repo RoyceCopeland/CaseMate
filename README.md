@@ -1,2 +1,4 @@
 # CaseMate
-Client-driven portal for journaling and archiving their own case-related data, as well as facilitating communication between client and case manager.
+## Overview
+
+CaseMate will provide an effective client portal system that follows agile development methodology. The intent is to provide a service that helps clients store case-related data.

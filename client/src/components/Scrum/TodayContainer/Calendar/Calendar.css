@@ -1,0 +1,7 @@
+.cal-table-wrapper{
+  height:400px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+.cal-table{
+}
