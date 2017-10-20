@@ -1,0 +1,10 @@
+.new-entry{
+    z-index: 100;
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    text-align: center;
+    margin: auto;
+    background: white;
+    padding: 20px;
+}
