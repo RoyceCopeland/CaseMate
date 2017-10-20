@@ -1915,7 +1915,7 @@ if (Vel) {
       this.$el[0].M_Modal = this;
       this.id = $el.attr('id');
       this.openingTrigger = undefined;
-      this.$overlay = $('<div class="modal-overlay"></div>');
+      this.$overlay = $('<div className="modal-overlay"></div>');
 
       Modal._increment++;
       Modal._count++;
