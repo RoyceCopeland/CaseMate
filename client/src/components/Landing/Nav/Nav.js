@@ -3,7 +3,7 @@ import React from "react";
 
 const Nav = props => 
 <div class="navbar-fixed">
-<nav class="transparent z-depth-0">
+<nav class="cyan darken-1 z-depth-0">
   <div class="nav-wrapper">
     <div class="row">
       <div class="col s12">
@@ -11,7 +11,7 @@ const Nav = props =>
         <a href="#" class="brand-logo" target="_blank">CaseMate Client Portal</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="./EntriesPage/App" target="_blank">New Journal Entry</a></li>
-          <li><a href="#" target="_blank">FAQ</a></li>
+          <li><a href="#" target="_blank">Chat</a></li>
           <li><a href="#" target="_blank">Log Out</a></li>
         </ul>
       </div>
