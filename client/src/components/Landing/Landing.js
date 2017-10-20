@@ -62,13 +62,7 @@ class Landing extends Component {
     componentDidMount() {
         this.loadBackground();
     }
-    //  loadBackground(){
-    //      backgroundAPI.getBackground()
-    //      .then(res => console.log(res))
-    //      .catch(err => console.log(err));
 
-    //      //this.setState({ breeds: res.data.message })
-    //  }
 
     componentDidMount() {
         this.intervalID = setInterval(() => this.tick(), 1000);
@@ -146,12 +140,10 @@ class Landing extends Component {
 
                         </Col>
                         <div>
-                            <Row id='NewEntry'>
                                 <Col l={5} m={6} s={10} offset={'m1 s1'}>
                                     <Entries />
 
                                 </Col>
-                            </Row>
                         </div>
                     </Row>
               
