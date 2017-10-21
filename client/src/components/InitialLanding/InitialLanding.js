@@ -3,7 +3,7 @@ import "./InitialLanding.css";
 import SignIn from "./SignInSignUp/SignIn/SignIn";
 import SignUp from "./SignInSignUp/SignUp/SignUp";
 import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
-import API from "../../utils/backgroundAPI";
+//import API from "../../utils/backgroundAPI";
 
 class InitialLanding extends Component {
   state = {
