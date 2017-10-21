@@ -1,10 +1,5 @@
 const express = require('express');
-//const skillController = require("../controllers/skillController");
-//const subtaskController = require("../controllers/subtaskController");
-//const toDoController = require("../controllers/toDoController");
 const actionItemsController = require("../controllers/actionItemsController");
-
-
 const router = new express.Router();
 
 //actionItem api routes

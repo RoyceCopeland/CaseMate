@@ -1,6 +1,6 @@
 import React from "react";
 import Landing from "./components/Landing/Landing";
-import Scrum from "./components/Scrum";
+//import Scrum from "./components/Scrum";
 import InitialLanding from "./components/InitialLanding/InitialLanding";
 import Auth from "./utils/Auth.js";
 import FirstLogin from "./utils/FirstLogin.js";

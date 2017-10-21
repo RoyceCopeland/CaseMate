@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import Agenda from "./Agenda";
 import { Button, Icon, Modal } from "react-materialize";
 import Nav from "./Nav";
-import SidebarDay from "./SidebarDay";
-//import Clock from "./Clock";
-//import backgroundAPI from "../../utils/backgroundAPI";
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "../Landing/EntriesPage";
 import NewEntry from "./NewEntry";
