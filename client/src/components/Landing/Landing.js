@@ -55,6 +55,60 @@ class Landing extends Component {
         createdAt: "2016-09-12 10:06 PM",
         text:
           " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          "Shut up"
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          "Shut up"
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          "No YOU shut up"
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
+      },
+      {
+        title: "You sent an email to John Doe",
+        createdAt: "2016-09-12 10:06 PM",
+        text:
+          " I received the payment for $543. Should be shipping the item within a couple of hours."
       }
     ]
   };
