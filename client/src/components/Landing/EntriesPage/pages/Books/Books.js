@@ -7,17 +7,37 @@ import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Books extends Component {
   // Setting our component's initial state
-  state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
-  };
+//   state = {
+//     books: [],
+//     title: "",
+//     author: "",
+//     synopsis: ""
+//   };
+
+//   class Entries extends Component {
+//     // Setting our component's initial state
+    state = {
+      entries: [],
+      title: "",
+      author: "",
+      body: ""
+    };
+
+
+
 
   // When the component mounts, load all books and save them to this.state.books
 //   componentDidMount() {
 //     this.loadBooks();
 //   }
+
+  // When the component mounts, load all entries and save them to this.state.entries
+  componentDidMount() {
+    this.loadEntries();
+  }
+
+
+
 
 //   // Loads all books  and sets them to this.state.books
 //   loadBooks = () => {
@@ -28,12 +48,38 @@ class Books extends Component {
 //       .catch(err => console.log(err));
 //   };
 
+  // Loads all entries  and sets them to this.state.entries
+  loadEntries = () => {
+    API.getEntries()
+      .then(res =>
+        this.setState({ entries: res.data, title: "", author: "", body: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+
+
+
+
 //   // Deletes a book from the database with a given id, then reloads books from the db
 //   deleteBook = id => {
 //     API.deleteBook(id)
 //       .then(res => this.loadBooks())
 //       .catch(err => console.log(err));
 //   };
+
+//   // Deletes an entry from the database with a given id, then reloads entries from the db
+  deleteEntry = id => {
+    API.deleteEntry(id)
+      .then(res => this.loadEntries())
+      .catch(err => console.log(err));
+  };
+
+
+
+
+
+
 
 //   // Handles updating component state when the user types into the input field
 //   handleInputChange = event => {
@@ -42,6 +88,20 @@ class Books extends Component {
 //       [name]: value
 //     });
 //   };
+
+//   // Handles updating component state when the user types into the input field
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+
+
+
+
+
 
 //   // When the form is submitted, use the API.saveBook method to save the book data
 //   // Then reload books from the database
@@ -57,6 +117,27 @@ class Books extends Component {
 //         .catch(err => console.log(err));
 //     }
 //   };
+
+
+//   // When the form is submitted, use the API.saveEntry method to save the entry data
+//   // Then reload entries from the database
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.author) {
+      API.saveEntry({
+        title: this.state.title,
+        author: this.state.author,
+        body: this.state.body
+      })
+        .then(res => this.loadEntries())
+        .catch(err => console.log(err));
+    }
+  };
+
+
+
+
+
 
   render() {
     return (
@@ -80,9 +161,9 @@ class Books extends Component {
                 placeholder="XXXXXXXXXXXXX"
               />
               <TextArea
-                value={this.state.synopsis}
+                value={this.state.body}
                 onChange={this.handleInputChange}
-                name="synopsis"
+                name="body"
                 placeholder="type here ..."
               />
               <FormBtn
@@ -100,29 +181,7 @@ class Books extends Component {
               </FormBtn>
             </form>
           </Col>
-          {/* <Col size="md-6">
-            <Jumbotron>
-              <h1>Books On My List</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => {
-                  return (
-                    <ListItem key={book._id}>
-                      <a href={"/books/" + book._id}>
-                        <strong>
-                          {book.title} by {book.author}
-                        </strong>
-                      </a>
-                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-          </Col> */}
+
         </Row>
       </Container>
     );
