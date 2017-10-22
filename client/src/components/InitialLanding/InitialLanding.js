@@ -3,10 +3,7 @@ import "./InitialLanding.css";
 import SignIn from "./SignInSignUp/SignIn/SignIn";
 import SignUp from "./SignInSignUp/SignUp/SignUp";
 import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
-<<<<<<< HEAD
-//import API from "../../utils/backgroundAPI";
-=======
->>>>>>> a3b50227d3db4b658978c2e3d420e4d7484eba5d
+
 
 class InitialLanding extends Component {
   state = {
