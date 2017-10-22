@@ -1,13 +1,14 @@
 const express = require('express');
-const actionItemsController = require("../controllers/actionItemsController");
+const journalEntriesController = require("../controllers/journalEntriesController");
 const router = new express.Router();
 
-//actionItem api routes
-router.get("/actionItem/user/:userId", actionItemsController.findByUser);
-router.get("/actionItem/skill/:userId", subtaskController.findBySkill);
-router.get("/actionItem/:id", actionItemsController.findById);
-router.post("/actionItem", actionItemsController.add);
-router.patch("/actionItem/:id", actionItemsController.update);
+
+//journalEntry api routes
+router.get("/journalEntry/:Id", journalEntriesController.findById);
+router.get("/journalEntry/skill/:Id", journalEntriesController.findById);
+router.delete("/journalEntry/:id", journalEntriesController.findById);
+router.post("/journalEntry", journalEntriesController.add);
+
 
 
 
