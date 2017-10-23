@@ -1,16 +1,19 @@
 const express = require('express');
-const journalEntriesController = require("../controllers/journalEntriesController");
+const journalEntriesController = require("./controllers/journalEntriesController");
 const router = new express.Router();
 
 
 //journalEntry api routes
-router.get("/journalEntry/:Id", journalEntriesController.findById);
-router.get("/journalEntry/skill/:Id", journalEntriesController.findById);
-router.delete("/journalEntry/:id", journalEntriesController.findById);
-router.post("/journalEntry", journalEntriesController.add);
+router.route("/")
+.get(journalEntriesController.findAll)
+.post(journalEntriesController.create);
 
-
+// Matches with "/api/journalEntries/:id"
+router
+.route("/:id")
+.get(journalEntriesController.findById)
+.put(journalEntriesController.update)
+.delete(journalEntriesController.remove);
 
 module.exports = router;
-
 

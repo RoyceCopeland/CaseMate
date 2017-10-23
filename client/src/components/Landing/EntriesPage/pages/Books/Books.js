@@ -6,13 +6,6 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Books extends Component {
-  // Setting our component's initial state
-//   state = {
-//     books: [],
-//     title: "",
-//     author: "",
-//     synopsis: ""
-//   };
 
 //   class Entries extends Component {
 //     // Setting our component's initial state
@@ -24,29 +17,11 @@ class Books extends Component {
     };
 
 
-
-
-  // When the component mounts, load all books and save them to this.state.books
-//   componentDidMount() {
-//     this.loadBooks();
-//   }
-
   // When the component mounts, load all entries and save them to this.state.entries
   componentDidMount() {
     this.loadEntries();
   }
 
-
-
-
-//   // Loads all books  and sets them to this.state.books
-//   loadBooks = () => {
-//     API.getBooks()
-//       .then(res =>
-//         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-//       )
-//       .catch(err => console.log(err));
-//   };
 
   // Loads all entries  and sets them to this.state.entries
   loadEntries = () => {
@@ -58,16 +33,6 @@ class Books extends Component {
   };
 
 
-
-
-
-//   // Deletes a book from the database with a given id, then reloads books from the db
-//   deleteBook = id => {
-//     API.deleteBook(id)
-//       .then(res => this.loadBooks())
-//       .catch(err => console.log(err));
-//   };
-
 //   // Deletes an entry from the database with a given id, then reloads entries from the db
   deleteEntry = id => {
     API.deleteEntry(id)
@@ -76,19 +41,6 @@ class Books extends Component {
   };
 
 
-
-
-
-
-
-//   // Handles updating component state when the user types into the input field
-//   handleInputChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({
-//       [name]: value
-//     });
-//   };
-
 //   // Handles updating component state when the user types into the input field
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -96,28 +48,6 @@ class Books extends Component {
       [name]: value
     });
   };
-
-
-
-
-
-
-
-//   // When the form is submitted, use the API.saveBook method to save the book data
-//   // Then reload books from the database
-//   handleFormSubmit = event => {
-//     event.preventDefault();
-//     if (this.state.title && this.state.author) {
-//       API.saveBook({
-//         title: this.state.title,
-//         author: this.state.author,
-//         synopsis: this.state.synopsis
-//       })
-//         .then(res => this.loadBooks())
-//         .catch(err => console.log(err));
-//     }
-//   };
-
 
 //   // When the form is submitted, use the API.saveEntry method to save the entry data
 //   // Then reload entries from the database
