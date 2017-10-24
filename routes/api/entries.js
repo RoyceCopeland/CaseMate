@@ -1,5 +1,5 @@
 const express = require('express');
-const journalEntriesController = require("./controllers/journalEntriesController");
+const journalEntriesController = require("../../controllers/journalEntriesController");
 const router = new express.Router();
 
 
