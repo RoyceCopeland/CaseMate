@@ -22,8 +22,8 @@ module.exports.connect = (uri) => {
 
   // load models
   require('./User');
-  require('./Skill');
-  require('./Subtask');
-  require('./ToDo');
-  require('./Streak');
+  // require('./Skill');
+  // require('./Subtask');
+  // require('./ToDo');
+  // require('./Streak');
 };
