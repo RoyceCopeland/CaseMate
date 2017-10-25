@@ -1,7 +1,7 @@
 .new-entry{
     z-index: 100;
-    position: fixed;
-    top: 100px;
+    position: relative;
+    top: 80px;
     right: 100px;
     text-align: center;
     margin: auto;

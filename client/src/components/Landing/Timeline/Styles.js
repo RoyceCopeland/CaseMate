@@ -7,6 +7,7 @@ let style = {
         // padding: '10px 0',
         // width: '33%',
         //margin: '0 auto'
+      
       },
       containerBefore: {
         content: '',

@@ -159,8 +159,9 @@ class Landing extends Component {
              
               </Timeline>
             </Col>
-
+            <Col l={5} m={6} s={10} offset={"l1 m1"}>
             {this.state.newEntry ? <NewEntry /> : ""}
+            </Col>
           </Row>
         </div>
       </div>
