@@ -8,6 +8,6 @@ const entrySchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Entry = mongoose.model("Entry", entrySchema);
+const entry = mongoose.model("entry", entrySchema);
 
-module.exports = Entry;
+module.exports = entry;
