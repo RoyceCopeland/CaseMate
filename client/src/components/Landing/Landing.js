@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { Button, Icon, Modal } from "react-materialize";
 import Nav from "./Nav";
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
-import Entries from "../Landing/EntriesPage";
-import NewEntry from "./NewEntry";
+import Entries from "./EntriesPage";
 import "./Landing.css";
 import { Row, Col, Card, CardTitle, Tabs, Tab } from "react-materialize";
 
@@ -160,7 +159,7 @@ class Landing extends Component {
               </Timeline>
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
-            {this.state.newEntry ? <NewEntry /> : ""}
+            {this.state.newEntry ? <Entries /> : ""}
             </Col>
           </Row>
         </div>
