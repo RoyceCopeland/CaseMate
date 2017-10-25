@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 module.exports.connect = (uri) => {
+  Entries: require("./Entry")
   mongoose.connect(
+    
   	uri,
   	{ 
   		useMongoClient: true
@@ -22,8 +24,13 @@ module.exports.connect = (uri) => {
 
   // load models
   require('./User');
+<<<<<<< HEAD
   // require('./Skill');
   // require('./Subtask');
   // require('./ToDo');
   // require('./Streak');
+=======
+   require('./Entry');
+
+>>>>>>> f85dd615044bf8b3abeb378ad6d9743e74ef079f
 };

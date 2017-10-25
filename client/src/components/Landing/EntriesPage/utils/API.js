@@ -1,20 +1,20 @@
-import axios from "axios";
+// import axios from "axios";
 
-export default {
-  // Gets all journal entries
-  getEntries: function() {
-    return axios.get("/api/entries");
-  },
-  // Gets the book with the given id
-  getEntry: function(id) {
-    return axios.get("/api/entries/" + id);
-  },
-  // Deletes the book with the given id
-  deleteEntry: function(id) {
-    return axios.delete("/api/entries/" + id);
-  },
-  // Saves a book to the database
-  saveEntry: function(entryData) {
-    return axios.post("/api/entries", entryData);
-  }
-};
+// export default {
+//   // Gets all journal entries
+//   getEntries: function() {
+//     return axios.get("..../routes/apiRoutes");
+//   },
+//   // Gets the book with the given id
+//   getEntry: function(id) {
+//     return axios.get("..../routes/apiRoutes" + id);
+//   },
+//   // Deletes the book with the given id
+//   deleteEntry: function(id) {
+//     return axios.delete("..../routes/apiRoutes" + id);
+//   },
+//   // Saves a book to the database
+//   saveEntry: function(entryData) {
+//     return axios.post("..../routes/apiRoutes", entryData);
+//   }
+// };
