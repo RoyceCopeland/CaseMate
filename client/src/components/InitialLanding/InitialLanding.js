@@ -4,6 +4,7 @@ import SignIn from "./SignInSignUp/SignIn/SignIn";
 import SignUp from "./SignInSignUp/SignUp/SignUp";
 import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
 
+
 class InitialLanding extends Component {
   state = {
     username: '',

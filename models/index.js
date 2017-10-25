@@ -9,6 +9,11 @@ module.exports.connect = (uri) => {
   		useMongoClient: true
   	}
   );
+
+  db.once("open", function() {
+    console.log("mongoose connection successful"); 
+    });
+    
   // plug in the promise library:
   mongoose.Promise = global.Promise;
 
