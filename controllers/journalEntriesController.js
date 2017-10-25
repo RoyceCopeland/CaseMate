@@ -1,51 +1,37 @@
-const journalEntry = require("../models/journalEntry");
+const db = require("../models/");
 
 module.exports = {
-  // This method handles retrieving articles from the db
-
-
+  findAll: function(req, res) {
+    db.Entry
+      .find(req.query)
+      .sort({ date: -1 })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+     // console.log("findAll route hit")
+  },
   findById: function(req, res) {
-    Subtask.find({ _id: req.params.id})
-    .populate('Timeline')
-    .then(function(doc) {
-      res.json(doc);
-    }).catch(function(err){
-      res.json(err);
-    })
+    db.Entry
+      .findById(req.params.id)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
-  
-  add: function(req, res) {
-    Subtask.create(req.body)
-    .then(function(doc){
-      res.json(doc);
-    }).catch(function(err){
-      res.json(err);
-    })
+  create: function(req, res) {
+    db.Entry
+      .create(req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
-
   update: function(req, res) {
-    Subtask.update({
-      _id: req.params.id
-    },
-      req.body
-    ).then(function(doc) {
-      res.json(doc);
-    }).catch(function(err) {
-      res.json(err);
-    });
-    
+    db.Entry
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   },
-
-  delete: function(req, res) {
-    Subtask.delete({
-      _id: req.params.id
-    },
-      req.body
-    ).then(function(doc) {
-      res.json(doc);
-    }).catch(function(err) {
-      res.json(err);
-    });
-    
+  remove: function(req, res) {
+    db.Entry
+      .findById({ _id: req.params.id })
+      .then(dbModel => dbModel.remove())
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
   }
 };
