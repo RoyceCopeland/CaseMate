@@ -5,6 +5,7 @@ import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "./EntriesPage";
 import "./Landing.css";
 import { Row, Col, Card, CardTitle, Tabs, Tab } from "react-materialize";
+import MessageBox from "./Chatbox";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -143,6 +144,10 @@ class Landing extends Component {
         <div>
           <Row id="TimelineBlock">
             <Col l={5} m={6} s={12} offset={"l1 m1"}>
+             
+       
+       
+             
               <Timeline onMouseMove={this.handleMouseMove}>
                 
                 {/*Use map here through this.state.entries*/}
@@ -161,8 +166,21 @@ class Landing extends Component {
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
             {this.state.newEntry ? <Entries cancel={this.entryClickHandler}/> : ""}
             </Col>
+
+  
+
+
           </Row>
+
+         
         </div>
+      
+        <div>
+       
+<MessageBox/>
+      
+        </div>
+      
       </div>
     );
   }
