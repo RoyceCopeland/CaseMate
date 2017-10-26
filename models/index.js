@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 module.exports.connect = (uri) => {
-  Entries: require("./Entry")
+ // Entries: require("./Entry")
   mongoose.connect(
 
     uri,
