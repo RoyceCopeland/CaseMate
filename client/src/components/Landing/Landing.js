@@ -188,6 +188,9 @@ class Landing extends Component {
         </div>
       
         <div>
+        <Row id="chatBox">
+            <Col l={5} m={6} s={12} offset={"l1 m1"}>
+     
        <Navbar/>
        <ChatItem/>
        <SystemMessage/>
@@ -201,7 +204,11 @@ class Landing extends Component {
        <SideBar/>
        <Popup/>
        <PhotoMessage/>
-      
+   
+   
+     
+      </Col>
+      </Row>
         </div>
       
       </div>
