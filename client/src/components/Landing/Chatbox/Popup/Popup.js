@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Popup.css';
 
-import Button from '../Button/Button';
+import ChatButton from '../ChatButton/ChatButton';
 
 const classNames = require('classnames');
 
@@ -21,8 +21,8 @@ export class Popup extends Component {
                             <span>{this.props.header}</span>
                             {
                                 this.props.header &&
-                                this.props.headerButtons.map((x, i) => (
-                                    <Button
+                                this.props.headerChatButtons.map((x, i) => (
+                                    <ChatButton
                                         key={i}
                                         {...x}/>
                                 ))
@@ -42,8 +42,8 @@ export class Popup extends Component {
                             this.props.renderFooter ?
                                 this.props.renderFooter()
                             :
-                            this.props.footerButtons.map((x, i) => (
-                                <Button
+                            this.props.footerChatButtons.map((x, i) => (
+                                <ChatButton
                                     key={i}
                                     {...x}/>
                             ))
@@ -60,8 +60,8 @@ Popup.defaultProps = {
     show: false,
     header: null,
     text: null,
-    headerButtons: [],
-    footerButtons: [],
+    headerChatButtons: [],
+    footerChatButtons: [],
     renderHeader: null,
     renderContent: null,
     renderFooter: null,

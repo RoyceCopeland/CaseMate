@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Button.css';
+import './ChatButton.css';
 
 const classNames = require('classnames');
 
-export class Button extends Component {
+export class ChatButton extends Component {
     render() {
         return (
             <button
@@ -32,7 +32,7 @@ export class Button extends Component {
     }
 }
 
-Button.defaultProps = {
+ChatButton.defaultProps = {
     text: '',
     disabled: false,
     type: null,
@@ -40,7 +40,7 @@ Button.defaultProps = {
     backgroundColor: '#3979aa',
     color: 'white',
     className: null,
-    buttonRef: null,
+    ChatbuttonRef: null,
 };
 
-export default Button;
+export default ChatButton;

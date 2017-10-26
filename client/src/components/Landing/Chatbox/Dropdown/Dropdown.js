@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Dropdown.css';
 
-import Button from '../Button/Button';
+import ChatButton from '../ChatButton/ChatButton';
 
 const classNames = require('classnames');
 
@@ -23,7 +23,7 @@ export class Dropdown extends Component {
         return (
             <div className={classNames('rce-dropdown-container', this.props.className)} onBlur={this.onBlur.bind(this)}>
                 {
-                    <Button
+                    <ChatButton
                         {...this.props.buttonProps}
                         onClick={() => this.setState({ show: !this.state.show })} />
                 }

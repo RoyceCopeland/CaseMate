@@ -5,7 +5,19 @@ import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "./EntriesPage";
 import "./Landing.css";
 import { Row, Col, Card, CardTitle, Tabs, Tab } from "react-materialize";
-import MessageBox from "./Chatbox";
+import { MessageBox,
+  ChatItem,
+  SystemMessage,
+  ChatList,
+  MessageList,
+  Input,
+  ChatButton,
+  Avatar,
+  Navbar,
+  Dropdown,
+  SideBar,
+  Popup,
+  PhotoMessage } from "./ChatBox";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -176,8 +188,19 @@ class Landing extends Component {
         </div>
       
         <div>
-       
-<MessageBox/>
+       <Navbar/>
+       <ChatItem/>
+       <SystemMessage/>
+       <ChatList/>
+       <MessageList/>
+       <Input/>
+       <ChatButton/>
+       <Avatar/>
+       <Navbar/>
+       <Dropdown/>
+       <SideBar/>
+       <Popup/>
+       <PhotoMessage/>
       
         </div>
       
