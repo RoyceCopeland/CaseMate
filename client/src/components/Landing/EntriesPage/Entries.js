@@ -11,7 +11,7 @@ class Entries extends Component {
   //   class Entries extends Component {
   //     // Setting our component's initial state
   state = {
-    entries: [],
+   // entries: [],
     title: "",
     author: "",
     body: ""
@@ -51,7 +51,7 @@ class Entries extends Component {
   };
 
   //   // When the form is submitted, use the API.saveEntry method to save the entry data
-  //   // Then reload entries from the database
+  
   handleFormSubmit = event => {
     event.preventDefault();
     if (this.state.title && this.state.author) {
@@ -60,7 +60,9 @@ class Entries extends Component {
         author: this.state.author,
         body: this.state.body
       })
-        .then(res => this.loadEntries())
+      //   // Then reload entries from the database
+
+ //       .then(res => this.loadEntries())
         .catch(err => console.log(err));
     }
   };
@@ -79,13 +81,13 @@ class Entries extends Component {
                   value={this.state.title}
                   onChange={this.handleInputChange}
                   name="title"
-                  placeholder="XXXXXXXXXXX"
+                  placeholder="Date"
                 />
                 <Input
                   value={this.state.author}
                   onChange={this.handleInputChange}
                   name="author"
-                  placeholder="XXXXXXXXXXXXX"
+                  placeholder="Submitter"
                 />
                 <TextArea
                   value={this.state.body}
@@ -94,14 +96,14 @@ class Entries extends Component {
                   placeholder="type here ..."
                 />
                 <FormBtn
-                  disabled={!(this.state.author && this.state.title)}
-                  onClick={this.handleFormSubmit}
+                
+                  onClick={this.props.cancel}
                 >
                   Cancel
               </FormBtn>
                 <b></b>
                 <FormBtn
-                  disabled={!(this.state.author && this.state.title)}
+             disabled={!(this.state.author && this.state.title && this.state.body)}
                   onClick={this.handleFormSubmit}
                 >
                   Submit

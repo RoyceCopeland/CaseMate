@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-module.exports = {
-  entry: require("./entry")
-};
-=======
 const mongoose = require('mongoose');
 module.exports.connect = (uri) => {
-  Entries: require("./Entry")
+ // Entries: require("./Entry")
   mongoose.connect(
 
     uri,
@@ -28,4 +23,3 @@ module.exports.connect = (uri) => {
   require('./entry');
 
 };
->>>>>>> ce985401ade85e3439ffd9aebcf370e6ffbb099b

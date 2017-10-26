@@ -159,7 +159,7 @@ class Landing extends Component {
               </Timeline>
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
-            {this.state.newEntry ? <Entries /> : ""}
+            {this.state.newEntry ? <Entries cancel={this.entryClickHandler}/> : ""}
             </Col>
           </Row>
         </div>
