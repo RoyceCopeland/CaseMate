@@ -52,20 +52,7 @@ class Entries extends Component {
 
   //   // When the form is submitted, use the API.saveEntry method to save the entry data
   
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveEntry({
-        title: this.state.title,
-        author: this.state.author,
-        body: this.state.body
-      })
-      //   // Then reload entries from the database
-
-       .then(res => console.log("Results are", res))
-        .catch(err => console.log(err));
-    }
-  };
+ 
 
   render() {
     return (
@@ -104,7 +91,7 @@ class Entries extends Component {
                 <b></b>
                 <FormBtn
              disabled={!(this.state.author && this.state.title && this.state.body)}
-                  onClick={this.handleFormSubmit}
+                  onClick={(e)=>{e.preventDefault(); return this.props.clickHandler(this.state.author, this.state.title, this.state.body)}}
                 >
                   Submit
               </FormBtn>

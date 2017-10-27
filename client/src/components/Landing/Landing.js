@@ -24,13 +24,6 @@ import { MessageBox,
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
 
-function newTime() {
-  return new Date().toLocaleString("en-US", {
-    hour12: true,
-    hour: "numeric",
-    minute: "numeric"
-  });
-}
 
 class Landing extends Component {
   // Setting our component's initial state
@@ -47,20 +40,7 @@ class Landing extends Component {
 
   state = {
     newEntry: false,
-    events: [
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          "Shut up"
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          "No YOU shut up"      }
-
-    ]
+    events: []
   };
 
   // When the component mounts, load all component data and save them to this.state.landing
@@ -70,18 +50,14 @@ class Landing extends Component {
     API.getEntries()
       .then(res =>{
         console.log("loadEntries hit", res)
-        this.setState({ entries: res.data, title: "", author: "", body: "" })
-      }
-      )
-      
+        this.setState({events: res.data})
+      }) 
       .catch(err => console.log(err));
     };
 
 
   componentDidMount() {
-    this.intervalID = setInterval(() => this.tick(), 1000);
    this.loadEntries();
-
 
   }
 
@@ -93,11 +69,22 @@ class Landing extends Component {
     this.setState({ newEntry: !this.state.newEntry });
   };
 
-  tick() {
-    this.setState({
-      time: newTime()
-    });
-  }
+  handleFormSubmit = (author, title, body) => {
+      API.saveEntry({
+        title: title,
+        author: author,
+        body: body
+      })
+      //   // Then reload entries from the database
+
+       .then(()=>{
+        this.loadEntries();
+        this.entryClickHandler();
+       })
+        .catch(err => console.log(err));
+  };
+
+
   render() {
     return (
       <div>
@@ -119,7 +106,7 @@ class Landing extends Component {
                 {this.state.events.map(event => (
                     <TimelineEvent  title={event.title}
                     createdAt={event.createdAt}>
-                    {event.text}
+                    {event.body}
                     </TimelineEvent>
                 )
                 )}
@@ -133,7 +120,7 @@ class Landing extends Component {
 
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
-            {this.state.newEntry ? <Entries cancel={this.entryClickHandler}/> : ""}
+            {this.state.newEntry ? <Entries cancel={this.entryClickHandler} clickHandler={this.handleFormSubmit}/> : ""}
             </Col>
 
   
