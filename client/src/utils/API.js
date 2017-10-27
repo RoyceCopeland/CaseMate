@@ -16,7 +16,7 @@ export default {
   // Saves an entry to the database
   saveEntry: function(entryData) {
     console.log("about to make Axios call", entryData);
-    return axios.post("/journalEntry", entryData);
+    return axios.post("/api/entries", entryData);
     console.log("made the Axios call");
     
   }

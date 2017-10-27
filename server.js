@@ -12,7 +12,14 @@ const schedule = require('node-schedule');
 const resetUserLoginStatus = require('./controllers/resetUserLoginStatus');
 
 // connect to the database and load models
-require('./models').connect(db.dbUri);
+// require('./models').connect(db.dbUri);
+mongoose.Promise = global.Promise;
+mongoose.connect(
+	process.env.MONGODB_URI || "mongodb://localhost/casemate",
+	{
+		useMongoClient: true
+	}	
+);
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,8 +29,8 @@ app.use(express.static("client/build"));
 
 
 // pass the authorization checker middleware
-const authCheckMiddleware = require('./middleware/auth-check');
-app.use('/api', authCheckMiddleware);
+// const authCheckMiddleware = require('./middleware/auth-check');
+// app.use('/api', authCheckMiddleware);
 
 
 // Add routes, both API and view

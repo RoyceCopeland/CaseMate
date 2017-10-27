@@ -1,12 +1,12 @@
-const express = require('express');
+const router = require('express').Router();
 const journalEntriesController = require("../../controllers/journalEntriesController");
-const router = new express.Router();
 
 
 //journalEntry api routes
 router.route("/")
 .get(journalEntriesController.findAll)
 .post(journalEntriesController.create);
+//.post(journalEntriesController.create);
 
 // Matches with "/api/journalEntries/:id"
 router.route("/:id")

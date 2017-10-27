@@ -1,25 +1,26 @@
-const mongoose = require('mongoose');
-module.exports.connect = (uri) => {
- // Entries: require("./Entry")
-  mongoose.connect(
+// const mongoose = require('mongoose');
+// module.exports.connect = (uri) => {
+//  // Entries: require("./Entry")
+//   mongoose.connect(
 
-    uri,
-    {
-      useMongoClient: true
-    }
-  );
+//     uri,
+//     {
+//       useMongoClient: true
+//     }
+//   );
 
 
-  // plug in the promise library:
-  mongoose.Promise = global.Promise;
+//   // plug in the promise library:
+//   mongoose.Promise = global.Promise;
 
-  mongoose.connection.on('error', (err) => {
-    console.error(`Mongoose connection error: ${err}`);
-    process.exit(1);
-  });
+//   mongoose.connection.on('error', (err) => {
+//     console.error(`Mongoose connection error: ${err}`);
+//     process.exit(1);
+//   });
 
   // load models
-  require('./User');
-  require('./entry');
+module.exports = {
+  User: require('./User'),
+  Entry: require('./entry')
 
 };

@@ -62,7 +62,7 @@ class Entries extends Component {
       })
       //   // Then reload entries from the database
 
- //       .then(res => this.loadEntries())
+       .then(res => console.log("Results are", res))
         .catch(err => console.log(err));
     }
   };
