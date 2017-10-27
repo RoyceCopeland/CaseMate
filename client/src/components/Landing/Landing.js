@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button, Icon, Modal } from "react-materialize";
 import Nav from "./Nav";
+import API from "../../utils/API";
+
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "./EntriesPage";
 import "./Landing.css";
@@ -17,7 +19,7 @@ import { MessageBox,
   Dropdown,
   SideBar,
   Popup,
-  PhotoMessage } from "./ChatBox";
+  PhotoMessage } from "./Chatbox";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -56,82 +58,32 @@ class Landing extends Component {
         title: "You sent an email to John Doe",
         createdAt: "2016-09-12 10:06 PM",
         text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          "Shut up"
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          "Shut up"
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          "No YOU shut up"
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      },
-      {
-        title: "You sent an email to John Doe",
-        createdAt: "2016-09-12 10:06 PM",
-        text:
-          " I received the payment for $543. Should be shipping the item within a couple of hours."
-      }
+          "No YOU shut up"      }
+
     ]
   };
 
   // When the component mounts, load all component data and save them to this.state.landing
-  componentDidMount() {
-    this.loadBackground();
-  }
+ 
+  // Loads all entries  and sets them to this.state.entries
+ loadEntries = () => {
+    API.getEntries()
+      .then(res =>{
+        console.log("loadEntries hit", res)
+        this.setState({ entries: res.data, title: "", author: "", body: "" })
+      }
+      )
+      
+      .catch(err => console.log(err));
+    };
+
 
   componentDidMount() {
     this.intervalID = setInterval(() => this.tick(), 1000);
-    //fetch stuff from db and setState({entries});
-  }
+   this.loadEntries();
 
-  //make a function to get from db on journal entry submit
+
+  }
 
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -174,6 +126,11 @@ class Landing extends Component {
 
              
               </Timeline>
+
+
+     
+      
+
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
             {this.state.newEntry ? <Entries cancel={this.entryClickHandler}/> : ""}
@@ -194,7 +151,7 @@ class Landing extends Component {
        <Navbar/>
      chatItem
        <ChatItem/>
-    SystemMessage
+    {/* SystemMessage
        <SystemMessage/>
      ChatList
        <ChatList/>
@@ -212,7 +169,7 @@ class Landing extends Component {
      DropDown
        <Dropdown/>
       SideBar
-       <SideBar/>
+       <SideBar/> */}
   
    
    

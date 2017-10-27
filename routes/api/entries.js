@@ -6,7 +6,6 @@ const journalEntriesController = require("../../controllers/journalEntriesContro
 router.route("/")
 .get(journalEntriesController.findAll)
 .post(journalEntriesController.create);
-//.post(journalEntriesController.create);
 
 // Matches with "/api/journalEntries/:id"
 router.route("/:id")
