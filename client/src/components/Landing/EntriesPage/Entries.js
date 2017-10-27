@@ -68,7 +68,9 @@ class Entries extends Component {
                   value={this.state.title}
                   onChange={this.handleInputChange}
                   name="title"
-                  placeholder="Date"
+                  type='date'
+                  title='Date'
+                  placeholder=''
                 />
                 <Input
                   value={this.state.author}
@@ -80,7 +82,7 @@ class Entries extends Component {
                   value={this.state.body}
                   onChange={this.handleInputChange}
                   name="body"
-                  placeholder="type here ..."
+                  placeholder="type your journal entry here"
                 />
                 <FormBtn
                 

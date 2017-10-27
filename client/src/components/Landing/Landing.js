@@ -104,8 +104,7 @@ class Landing extends Component {
                 {/*Use map here through this.state.entries*/}
 
                 {this.state.events.map(event => (
-                    <TimelineEvent  title={event.title}
-                    createdAt={event.createdAt}>
+                    <TimelineEvent  title={event.title}>
                     {event.body}
                     </TimelineEvent>
                 )
