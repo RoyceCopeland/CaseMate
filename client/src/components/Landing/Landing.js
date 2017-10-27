@@ -137,7 +137,7 @@ class Landing extends Component {
        <Navbar/>
      chatItem
        <ChatItem/>
-    {/* SystemMessage
+    SystemMessage
        <SystemMessage/>
      ChatList
        <ChatList/>
@@ -155,7 +155,7 @@ class Landing extends Component {
      DropDown
        <Dropdown/>
       SideBar
-       <SideBar/> */}
+       <SideBar/>
   
    
    
