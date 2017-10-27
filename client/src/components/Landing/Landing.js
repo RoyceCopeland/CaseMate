@@ -190,20 +190,30 @@ class Landing extends Component {
         <div>
         <Row id="chatBox">
             <Col l={5} m={6} s={12} offset={"l1 m1"}>
-     
+     navbar
        <Navbar/>
+     chatItem
        <ChatItem/>
+    SystemMessage
        <SystemMessage/>
+     ChatList
        <ChatList/>
+      MessageList
        <MessageList/>
+       MessageBox
+       <MessageBox/>
+    Input
        <Input/>
+     ChatButton
        <ChatButton/>
+      Avatar
        <Avatar/>
-       <Navbar/>
+   
+     DropDown
        <Dropdown/>
+      SideBar
        <SideBar/>
-       <Popup/>
-       <PhotoMessage/>
+  
    
    
      
