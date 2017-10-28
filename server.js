@@ -15,7 +15,7 @@ const resetUserLoginStatus = require('./controllers/resetUserLoginStatus');
 // require('./models').connect(db.dbUri);
 mongoose.Promise = global.Promise;
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/casemate",
+	process.env.MONGODB_URI || "mongodb://joyce:password@ds113505.mlab.com:13505/heroku_7zz37k99",
 	{
 		useMongoClient: true
 	}	
