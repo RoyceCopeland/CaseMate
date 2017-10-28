@@ -4,7 +4,6 @@ import SignIn from "./SignInSignUp/SignIn/SignIn";
 import SignUp from "./SignInSignUp/SignUp/SignUp";
 import {Row, Col, Card, CardTitle, Tabs, Tab} from 'react-materialize';
 
-
 class InitialLanding extends Component {
   state = {
     username: '',
@@ -23,7 +22,7 @@ class InitialLanding extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bck">
         <Row className='wrapper'>
           <Col l={6} m={6} s={12} offset={"m1 l1"}>
             <Tabs className='tab-demo z-depth-1'>

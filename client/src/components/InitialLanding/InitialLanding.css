@@ -1,10 +1,17 @@
-.wrapper{
-  padding-top:100px;
+.wrapper {
+  padding-top: 100px;
 }
-.row{
-  margin-bottom:0px;
+.row {
+  margin-bottom: 0px;
 }
-.button-signin{
-  margin-right:20px;
+.button-signin {
+  margin-right: 20px;
+}
 
+.bck {
+  background: url("/img/justice_bkgnd.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
