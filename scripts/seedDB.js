@@ -5,12 +5,12 @@ mongoose.Promise = global.Promise;
 
 // // This file empties the Entries collection and inserts the test entries below
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/entries",
-  {
-    useMongoClient: true
-  }
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/entries",
+//   {
+//     useMongoClient: true
+//   }
+// );
 
 const bookSeed = [
   {
