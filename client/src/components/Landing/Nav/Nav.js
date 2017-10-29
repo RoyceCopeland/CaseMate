@@ -16,9 +16,16 @@ const Nav = props =>
           <li><a href="#" target="_blank">FAQ</a></li>
           <li onClick={Auth.deauthenticateUser}><a href="#">Log Out</a></li>        </ul>
       </div>
+<<<<<<< HEAD
       </div>
       </div>
     </nav>
+=======
+   
+    </div>
+ 
+ 
+>>>>>>> d3bd70409e2e4d1bcb078884248d8531b81d973d
   </div>
   ;
 
