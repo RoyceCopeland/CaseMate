@@ -7,3 +7,7 @@ CaseMate will provide an effective client portal system that follows agile devel
 
 ![GitHub Logo](../img/justice_bkgnd.jpg)
 Format: ![Alt Text](url)
+
+
+[http://case-mate.herokuapp.com/#](http://case-mate.herokuapp.com/# "CaseMate's homepage")
+

@@ -14,19 +14,18 @@ const Nav = props =>
           <li onClick={props.click}><a href="#">New Journal Entry</a></li>
           <li><a href="#" target="_blank">Chat</a></li>
           <li><a href="#" target="_blank">FAQ</a></li>
-          <li onClick={Auth.deauthenticateUser}><a href="case-mate.herokuapp.com/#">Log Out</a></li>        </ul>
+          <li onClick={Auth.deauthenticateUser}><a href="#">Log Out</a></li>        </ul>
       </div>
-<<<<<<< HEAD
-      </div>
-      </div>
-    </nav>
-=======
    
     </div>
  
  
->>>>>>> d3bd70409e2e4d1bcb078884248d8531b81d973d
   </div>
+
+</nav>
+</div>
+
+
   ;
 
 
