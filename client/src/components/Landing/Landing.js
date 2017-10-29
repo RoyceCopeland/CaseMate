@@ -104,11 +104,14 @@ class Landing extends Component {
 
                 {this.state.events.map(event => (
                   <TimelineEvent
-                  title={event.title}>
+                  title={event.title}
 
-                    {event.date}
+                    date={event.date}>
 
-                    {event.body}
+                    {event.body.split("\n").map(i => {
+                      console.log(i);
+                        return <div><br />{i}</div>;
+                    })}
                   </TimelineEvent>
                 )
                 )}
