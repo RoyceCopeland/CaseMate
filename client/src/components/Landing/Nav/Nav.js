@@ -1,5 +1,7 @@
 import React from "react";
 //import App from "./EntriesPage/App";
+import Auth from "../../../utils/Auth";
+
 
 const Nav = props => 
 <div className="navbar-fixed">
@@ -12,8 +14,7 @@ const Nav = props =>
           <li onClick={props.click}><a href="#">New Journal Entry</a></li>
           <li><a href="#" target="_blank">Chat</a></li>
           <li><a href="#" target="_blank">FAQ</a></li>
-          <li><a href="#" target="_blank">Log Out</a></li>
-        </ul>
+          <li onClick={Auth.deauthenticateUser}><a href="#">Log Out</a></li>        </ul>
       </div>
    
     </div>
