@@ -26,7 +26,6 @@ import {
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
 
-
 class Landing extends Component {
   // Setting our component's initial state
 
@@ -51,16 +50,14 @@ class Landing extends Component {
   loadEntries = () => {
     API.getEntries()
       .then(res => {
-        console.log("loadEntries hit", res)
-        this.setState({ events: res.data })
+        console.log("loadEntries hit", res);
+        this.setState({ events: res.data });
       })
       .catch(err => console.log(err));
   };
 
-
   componentDidMount() {
     this.loadEntries();
-
   }
 
   componentWillUnmount() {
@@ -82,10 +79,10 @@ class Landing extends Component {
       .then(() => {
         this.loadEntries();
         this.entryClickHandler();
+        this.logOutClickHandler();
       })
       .catch(err => console.log(err));
   };
-
 
   render() {
     return (
@@ -96,73 +93,177 @@ class Landing extends Component {
 
         <div>
           <Row id="TimelineBlock">
-            <Col l={5} m={6} s={12} offset={"l1 m1"}>
-
+            <Col l={5} m={6} s={12} offset={"l1 m1"} className="Timeline">
               <Timeline onMouseMove={this.handleMouseMove}>
-
                 {/*Use map here through this.state.entries*/}
 
                 {this.state.events.map(event => (
-                  <TimelineEvent
-                  title={event.title}
-
-                    date={event.date}>
-
+                  <TimelineEvent title={event.title} date={event.date}>
                     {event.body.split("\n").map(i => {
                       console.log(i);
-                        return <div><br />{i}</div>;
+                      return (
+                        <div>
+                          <br />
+                          {i}
+                        </div>
+                      );
                     })}
                   </TimelineEvent>
-                )
-                )}
-
-
+                ))}
               </Timeline>
-
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
-              {this.state.newEntry ? <Entries cancel={this.entryClickHandler} clickHandler={this.handleFormSubmit} /> : ""}
+              {this.state.newEntry ? (
+                <Entries
+                  cancel={this.entryClickHandler}
+                  clickHandler={this.handleFormSubmit}
+                />
+              ) : (
+                ""
+              )}
             </Col>
-    
           </Row>
-
-
         </div>
 
         <div>
           <Row id="chatBox">
-            <Col l={5} m={6} s={12} offset={"l1 m1"}>
-              navbar
-       <Navbar />
-              chatItem
-       <ChatItem />
-              SystemMessage
-       <SystemMessage />
+            <Col l={3} m={3} s={12} offset={"l8 m8"}>
+
+ 
+            <Navbar />
+
+              <MessageList
+                className="message-list"
+                lockable={true}
+                toBottomHeight={"100%"}
+                dataSource={[
+                  {
+                    position: "right",
+                    type: "text",
+                    text:
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                    date: new Date()
+                  },
+                  {
+                    position: "left",
+                    type: "text",
+                    text:
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                    date: new Date()
+                  },
+                  
+                  {
+                    position: "left",
+                    type: "text",
+                    text:
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                    date: new Date()
+                  },
+                  {
+                    position: "right",
+                    type: "text",
+                    text:
+                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                    date: new Date()
+                  }
+                  
+                ]}
+                
+              />
+              <Input
+    placeholder="Type here..."
+    multiline={true}
+    buttons={
+        <Button
+            color='white'
+            backgroundColor='black'
+            text='Send'/>
+    }/>
+              chat item
+              <ChatItem
+    avatar={'https://facebook.github.io/react/img/logo.svg'}
+    alt={'Reactjs'}
+    title={'Facebook'}
+    subtitle={'What are you doing?'}
+    date={new Date()}
+    unread={0} />
+          INPUT
+
+
+<Input
+    placeholder="Type here..."
+    multiline={true}
+    buttons={
+        <Button
+            color='white'
+            backgroundColor='black'
+            text='Send'/>
+    }/>
+
+// clear text eg:
+<Input
+    ref='input'
+    placeholder="Type here..."/>
+              <SystemMessage />
               ChatList
-       <ChatList />
-              MessageList
-       <MessageList />
-              MessageBox
-       <MessageBox />
-              Input
-       <Input />
-              ChatButton
-       <ChatButton />
-              Avatar
-       <Avatar />
+              <ChatList />
+             
+              <MessageBox />
+          popup
+              <Popup
+    show={this.state.show}
+    header='Lorem ipsum dolor sit amet.'
+    headerButtons={[{
+        type: 'transparent',
+        color:'black',
+        text: 'close',
+        onClick: () => {
+            this.setState({show: false})
+        }
+    }]}
+    text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!'
+    footerButtons={[{
+        color:'white',
+        backgroundColor:'#F5F5F5',
+        text:"Vazgeç",
+    },{
+        color:'white',
+        backgroundColor:'lightgreen',
+        text:"Tamam",
+    }]}/>
 
+           
+              <Avatar />
               DropDown
-       <Dropdown />
-              SideBar
-       <SideBar />
+              <Dropdown />
 
+<Dropdown
+    buttonProps={{
+        text: 'Dropdown',
+    }}
+    items={[
+        'merhaba',
+        'lorem',
+        'ipsum',
+        'dolor',
+        'sit',
+        'amet',
+    ]}/>
 
-
-
+<MessageBox
+    position={'left'}
+    type={'photo'}
+    text={'react.svg'}
+    data={{
+        uri: 'https://facebook.github.io/react/img/logo.svg',
+        status: {
+            click: false,
+            loading: 0,
+        }
+    }}/>
             </Col>
           </Row>
         </div>
-
       </div>
     );
   }

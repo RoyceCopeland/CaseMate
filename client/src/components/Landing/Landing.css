@@ -1,2 +1,12 @@
 
+.Timeline {
+    margin-top: 19px;
+}
 
+#chatBox {
+
+    position: fixed;
+    width: 90%;
+    bottom: 0;
+    /* right:-20%; */
+}
