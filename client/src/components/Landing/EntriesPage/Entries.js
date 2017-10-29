@@ -12,34 +12,12 @@ class Entries extends Component {
   //     // Setting our component's initial state
   state = {
    // entries: [],
+    date: "",
     title: "",
-    author: "",
     body: ""
   };
 
 
-  // When the component mounts, load all entries and save them to this.state.entries
-  // componentDidMount() {
-  //   this.loadEntries();
-  // }
-
-
-  // Loads all entries  and sets them to this.state.entries
-  //   loadEntries = () => {
-  //     API.getEntries()
-  //       .then(res =>
-  //         this.setState({ entries: res.data, title: "", author: "", body: "" })
-  //       )
-  //       .catch(err => console.log(err));
-  //   };
-
-
-  // //   // Deletes an entry from the database with a given id, then reloads entries from the db
-  //   deleteEntry = id => {
-  //     API.deleteEntry(id)
-  //       .then(res => this.loadEntries())
-  //       .catch(err => console.log(err));
-  //   };
 
 
   //   // Handles updating component state when the user types into the input field
@@ -65,18 +43,18 @@ class Entries extends Component {
 
               <form>
                 <Input
+                  value={this.state.date}
+                  onChange={this.handleInputChange}
+                  name="date"
+                  type='date'
+                //  date='Date'
+                  //placeholder=''
+                />
+                <Input
                   value={this.state.title}
                   onChange={this.handleInputChange}
                   name="title"
-                  type='date'
-                  title='Date'
-                  placeholder=''
-                />
-                <Input
-                  value={this.state.author}
-                  onChange={this.handleInputChange}
-                  name="author"
-                  placeholder="Submitter"
+                  placeholder="Title"
                 />
                 <TextArea
                   value={this.state.body}
@@ -84,16 +62,19 @@ class Entries extends Component {
                   name="body"
                   placeholder="type your journal entry here"
                 />
+
+
+
                 <FormBtn
                 
                   onClick={this.props.cancel}
                 >
                   Cancel
               </FormBtn>
-                <b></b>
+             
                 <FormBtn
-             disabled={!(this.state.author && this.state.title && this.state.body)}
-                  onClick={(e)=>{e.preventDefault(); return this.props.clickHandler(this.state.author, this.state.title, this.state.body)}}
+             disabled={!(this.state.title && this.state.date && this.state.body)}
+                  onClick={(e)=>{e.preventDefault(); return this.props.clickHandler(this.state.title, this.state.date, this.state.body)}}
                 >
                   Submit
               </FormBtn>
