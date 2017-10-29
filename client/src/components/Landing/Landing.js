@@ -6,8 +6,9 @@ import API from "../../utils/API";
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "./EntriesPage";
 import "./Landing.css";
-import { Row, Col, Card, CardTitle, Tabs, Tab } from "react-materialize";
-import { MessageBox,
+import { Row, Col, Card, Carddate, Tabs, Tab } from "react-materialize";
+import {
+  MessageBox,
   ChatItem,
   SystemMessage,
   ChatList,
@@ -19,7 +20,8 @@ import { MessageBox,
   Dropdown,
   SideBar,
   Popup,
-  PhotoMessage } from "./Chatbox";
+  PhotoMessage
+} from "./Chatbox";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -30,7 +32,7 @@ class Landing extends Component {
 
   /*  state = {
          entries: [
-             {title: "Joe sent something",
+             {date: "Joe sent something",
                createdAt: "2016-09-12 10:06 PM",
                blurb:  "I received the payment for $543. Should be shipping the item within a couple of hours."
                },
@@ -44,20 +46,20 @@ class Landing extends Component {
   };
 
   // When the component mounts, load all component data and save them to this.state.landing
- 
+
   // Loads all entries  and sets them to this.state.entries
- loadEntries = () => {
+  loadEntries = () => {
     API.getEntries()
-      .then(res =>{
+      .then(res => {
         console.log("loadEntries hit", res)
-        this.setState({events: res.data})
-      }) 
+        this.setState({ events: res.data })
+      })
       .catch(err => console.log(err));
-    };
+  };
 
 
   componentDidMount() {
-   this.loadEntries();
+    this.loadEntries();
 
   }
 
@@ -69,19 +71,19 @@ class Landing extends Component {
     this.setState({ newEntry: !this.state.newEntry });
   };
 
-  handleFormSubmit = (author, title, body) => {
-      API.saveEntry({
-        title: title,
-        author: author,
-        body: body
-      })
+  handleFormSubmit = (date, title, body) => {
+    API.saveEntry({
+      date: date,
+      title: title,
+      body: body
+    })
       //   // Then reload entries from the database
 
-       .then(()=>{
+      .then(() => {
         this.loadEntries();
         this.entryClickHandler();
-       })
-        .catch(err => console.log(err));
+      })
+      .catch(err => console.log(err));
   };
 
 
@@ -95,75 +97,69 @@ class Landing extends Component {
         <div>
           <Row id="TimelineBlock">
             <Col l={5} m={6} s={12} offset={"l1 m1"}>
-             
-       
-       
-             
+
               <Timeline onMouseMove={this.handleMouseMove}>
-                
+
                 {/*Use map here through this.state.entries*/}
 
                 {this.state.events.map(event => (
-                    <TimelineEvent  title={event.title}>
+                  <TimelineEvent
+                  title={event.title}>
+
+                    {event.date}
+
                     {event.body}
-                    </TimelineEvent>
+                  </TimelineEvent>
                 )
                 )}
 
-             
+
               </Timeline>
-
-
-     
-      
 
             </Col>
             <Col l={5} m={6} s={10} offset={"l1 m1"}>
-            {this.state.newEntry ? <Entries cancel={this.entryClickHandler} clickHandler={this.handleFormSubmit}/> : ""}
+              {this.state.newEntry ? <Entries cancel={this.entryClickHandler} clickHandler={this.handleFormSubmit} /> : ""}
             </Col>
-
-  
-
-
+    
           </Row>
 
-         
+
         </div>
-      
+
         <div>
-        <Row id="chatBox">
+          <Row id="chatBox">
             <Col l={5} m={6} s={12} offset={"l1 m1"}>
-     navbar
-       <Navbar/>
-     chatItem
-       <ChatItem/>
-    SystemMessage
-       <SystemMessage/>
-     ChatList
-       <ChatList/>
-      MessageList
-       <MessageList/>
-       MessageBox
-       <MessageBox/>
-    Input
-       <Input/>
-     ChatButton
-       <ChatButton/>
-      Avatar
-       <Avatar/>
-   
-     DropDown
-       <Dropdown/>
-      SideBar
-       <SideBar/>
-  
-   
-   
-     
-      </Col>
-      </Row>
+              navbar
+       <Navbar />
+              chatItem
+       <ChatItem />
+              SystemMessage
+       <SystemMessage />
+              ChatList
+       <ChatList />
+              MessageList
+       <MessageList />
+              MessageBox
+       <MessageBox />
+              Input
+       <Input />
+              ChatButton
+       <ChatButton />
+              Avatar
+       <Avatar />
+
+              DropDown
+       <Dropdown />
+              SideBar
+       <SideBar />
+
+
+
+
+            </Col>
+          </Row>
         </div>
-      
+
       </div>
     );
   }
