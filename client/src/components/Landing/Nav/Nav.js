@@ -18,14 +18,6 @@ const Nav = props =>
       </div>
    
     </div>
-  
-  
-    {/* <ul className="side-nav" id="mobile-demo">
-      <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Sass</a></li>
-      <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Components</a></li>
-      <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Javascript</a></li>
-      <li><a href="https://codepen.io/collection/nbBqgY/" target="_blank">Mobile</a></li>
-    </ul> */}
  
  
   </div>
