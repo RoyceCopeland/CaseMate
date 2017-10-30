@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Icon, Modal } from "react-materialize";
+import { Button, Icon, Modal, CardPanel } from "react-materialize";
 import Nav from "./Nav";
 import API from "../../utils/API";
 
@@ -22,6 +22,8 @@ import {
   Popup,
   PhotoMessage
 } from "./Chatbox";
+import App from "./ChatExample/App";
+
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
@@ -119,148 +121,98 @@ class Landing extends Component {
                   clickHandler={this.handleFormSubmit}
                 />
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </Col>
           </Row>
         </div>
 
         <div>
+
+
           <Row id="chatBox">
             <Col l={3} m={3} s={12} offset={"l8 m8"}>
-
- 
-            <Navbar />
-
-              <MessageList
-                className="message-list"
-                lockable={true}
-                toBottomHeight={"100%"}
-                dataSource={[
-                  {
-                    position: "right",
-                    type: "text",
-                    text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                    date: new Date()
-                  },
-                  {
-                    position: "left",
-                    type: "text",
-                    text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                    date: new Date()
-                  },
-                  
-                  {
-                    position: "left",
-                    type: "text",
-                    text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                    date: new Date()
-                  },
-                  {
-                    position: "right",
-                    type: "text",
-                    text:
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                    date: new Date()
-                  }
-                  
-                ]}
+              <Row>
+                <Col l={12} m={12} s={12} offset={"l1 m1"}>
                 
-              />
-              <Input
-    placeholder="Type here..."
-    multiline={true}
-    buttons={
-        <Button
-            color='white'
-            backgroundColor='black'
-            text='Send'/>
-    }/>
-              chat item
-              <ChatItem
-    avatar={'https://facebook.github.io/react/img/logo.svg'}
-    alt={'Reactjs'}
-    title={'Facebook'}
-    subtitle={'What are you doing?'}
-    date={new Date()}
-    unread={0} />
-          INPUT
+                  <CardPanel className="cyan darken-1 black-text">
+
+                  <App/>
+
+                    {/* <MessageList
+                      className="message-list"
+                      lockable={true}
+                      toBottomHeight={"100%"}
+                      dataSource={[
+                        {
+                          position: "right",
+                          type: "text",
+                          text:
+                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                          date: new Date()
+                        },
+                        {
+                          position: "left",
+                          type: "text",
+                          text:
+                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+                          date: new Date()
+                        }
+
+                      ]}
+
+                    />
 
 
-<Input
-    placeholder="Type here..."
-    multiline={true}
-    buttons={
-        <Button
-            color='white'
-            backgroundColor='black'
-            text='Send'/>
-    }/>
+                    <Input
+                      placeholder="Type here..."
+                      multiline={true}
+                      buttons={
+                        <Button
+                          color='white'
+                          backgroundColor='black'
+                          text='Send' />
+                      } />
 
-// clear text eg:
-<Input
-    ref='input'
-    placeholder="Type here..."/>
-              <SystemMessage />
-              ChatList
-              <ChatList />
-             
-              <MessageBox />
-          popup
-              <Popup
-    show={this.state.show}
-    header='Lorem ipsum dolor sit amet.'
-    headerButtons={[{
-        type: 'transparent',
-        color:'black',
-        text: 'close',
-        onClick: () => {
-            this.setState({show: false})
-        }
-    }]}
-    text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!'
-    footerButtons={[{
-        color:'white',
-        backgroundColor:'#F5F5F5',
-        text:"Vazgeç",
-    },{
-        color:'white',
-        backgroundColor:'lightgreen',
-        text:"Tamam",
-    }]}/>
+                    <ChatButton
+                      text={'send message'} /> */}
+                 
+                  </CardPanel>
 
            
-              <Avatar />
-              DropDown
-              <Dropdown />
+             
+                  {/* <Popup
+                      show={this.state.show}
+                      header='Lorem ipsum dolor sit amet.'
+                      headerButtons={[{
+                        type: 'transparent',
+                        color: 'black',
+                        text: 'close',
+                        onClick: () => {
+                          this.setState({ show: false })
+                       
+                        }
+                        
+                      }]}
+                      text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!'
+                      footerButtons={[{
+                        color: 'white',
+                        backgroundColor: '#ff5e3e',
+                        text: "Vazgeç",
+                      }, {
+                        color: 'white',
+                        backgroundColor: 'lightgreen',
+                        text: "Tamam",
+                      }]} />      */}
+                </Col>
 
-<Dropdown
-    buttonProps={{
-        text: 'Dropdown',
-    }}
-    items={[
-        'merhaba',
-        'lorem',
-        'ipsum',
-        'dolor',
-        'sit',
-        'amet',
-    ]}/>
+              </Row>
 
-<MessageBox
-    position={'left'}
-    type={'photo'}
-    text={'react.svg'}
-    data={{
-        uri: 'https://facebook.github.io/react/img/logo.svg',
-        status: {
-            click: false,
-            loading: 0,
-        }
-    }}/>
+
+
+
+
+
             </Col>
           </Row>
         </div>
