@@ -225,7 +225,7 @@ export class App extends Component {
                         dataSource={this.state.messageList} />
 
                     <Input
-                        placeholder="Mesajınızı buraya yazınız."
+                        placeholder="This is an input space"
                         defaultValue=""
                         ref='input'
                         multiline={true}
