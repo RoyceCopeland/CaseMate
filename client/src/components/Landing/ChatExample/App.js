@@ -65,24 +65,24 @@ export class App extends Component {
                 var type = this.token();
                 var status = 'waiting';
                 switch (type) {
-                    case 0:
-                        type = 'photo';
-                        status = 'sent';
-                        break;
-                    case 1:
-                        type = 'file';
-                        status = 'sent';
-                        break;
-                    case 2:
-                        type = 'system';
-                        status = 'received';
-                        break;
-                    case 3:
-                        type = 'location';
-                        break;
-                    case 4:
-                        type = 'spotify';
-                        break;
+                    // case 0:
+                    //     type = 'photo';
+                    //     status = 'sent';
+                    //     break;
+                    // case 1:
+                    //     type = 'file';
+                    //     status = 'sent';
+                    //     break;
+                    // case 2:
+                    //     type = 'system';
+                    //     status = 'received';
+                    //     break;
+                    // case 3:
+                    //     type = 'location';
+                    //     break;
+                    // case 4:
+                    //     type = 'spotify';
+                    //     break;
                     default:
                         type = 'text';
                         status = 'read';
@@ -147,7 +147,7 @@ export class App extends Component {
         }
     }
 
-    addMessage() {
+    addMessage(e) {
         var list = this.state.messageList;
         list.push(this.random('message'));
         this.setState({
@@ -164,59 +164,7 @@ export class App extends Component {
 
         return (
             <div className='container'>
-                <div
-                    className='chat-list'>
-                    <SideBar
-                        top={
-                            <Popup
-                                // show={this.state.show}
-                                header='Lorem ipsum dolor sit amet.'
-                                headerChatButtons={[{
-                                    type: 'transparent',
-                                    color: 'black',
-                                    onClick: () => {
-                                        this.setState({ show: false })
-                                    },
-                                    icon: {
-                                        component: <FaClose />,
-                                        size: 18
-                                    }
-                                }]}
-                                text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!'
-                                footerChatButtons={[{
-                                    color: 'white',
-                                    backgroundColor: '#ff5e3e',
-                                    text: "Vazgeç",
-                                }, {
-                                    color: 'white',
-                                    backgroundColor: 'lightgreen',
-                                    text: "Tamam",
-                                }]} />
-                        }
-                        center={
-                            <ChatList
-                                dataSource={chatSource} />
-                        }
-                        bottom={
-                            <span>
-                                <ChatButton
-                                    type='transparent'
-                                    color='black'
-                                    icon={{
-                                        component: <FaComments />,
-                                        size: 18
-                                    }} />
-                                <ChatButton
-                                    type='transparent'
-                                    color='black'
-                                    icon={{
-                                        component: <FaSearch />,
-                                        size: 18
-                                    }} />
-                                <ChatButton text="Count"></ChatButton>
-                            </span>
-                        } />
-                </div>
+                
                 <div
                     className='right-panel'>
                     <MessageList

@@ -4,9 +4,15 @@
 }
 
 #chatBox {
-
     position: fixed;
     width: 90%;
     bottom: 0;
     /* right:-20%; */
+}
+
+.cardhead {
+    height: 200px;
+    visibility: hidden;
+    bottom: 0;
+    /* position: fixed; */
 }
