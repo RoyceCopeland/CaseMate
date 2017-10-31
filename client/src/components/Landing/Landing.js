@@ -141,12 +141,12 @@ class Landing extends Component {
               <Row>
               <Col l={12} m={12} s={12} offset={"l8 m8"}>
                 
-              {/* <Card  style={{background:'rgba(0,0,0,0)'}} header={<div className='cardhead' style={{background:'rgba(0,0,0,0)'}} onClick={()=>console.log('click')}></div>}
+               <Card  style={{background:'rgba(0,0,0,0)'}} header={<div className='cardhead' style={{background:'rgba(0,0,0,0)'}} onClick={()=>console.log('click')}></div>}
                   title="chat"
                   reveal={<App/>}
                   onClick={() => {this.toggleCard()}}>
                   
-              </Card> */}
+              </Card> 
 
                     {/* <MessageList
                       className="message-list"
