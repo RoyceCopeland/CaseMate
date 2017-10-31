@@ -43,7 +43,8 @@ class Landing extends Component {
 
   state = {
     newEntry: false,
-    events: []
+    events: [],
+    hidden: true
   };
 
   // When the component mounts, load all component data and save them to this.state.landing
@@ -86,7 +87,12 @@ class Landing extends Component {
       .catch(err => console.log(err));
   };
 
+  toggleCard = (hide) => {
+    this.setState({ hidden: !this.state.hidden})
+  }
+
   render() {
+    console.log("state is", this.state.hidden);
     return (
       <div>
         <div>
@@ -133,11 +139,14 @@ class Landing extends Component {
           <Row id="chatBox">
             <Col l={3} m={3} s={12} offset={"l8 m8"}>
               <Row>
-                <Col l={12} m={12} s={12} offset={"l1 m1"}>
+              <Col l={12} m={12} s={12} offset={"l8 m8"}>
                 
-                  <CardPanel className="cyan darken-1 black-text">
-
-                  <App/>
+              {/* <Card  style={{background:'rgba(0,0,0,0)'}} header={<div className='cardhead' style={{background:'rgba(0,0,0,0)'}} onClick={()=>console.log('click')}></div>}
+                  title="chat"
+                  reveal={<App/>}
+                  onClick={() => {this.toggleCard()}}>
+                  
+              </Card> */}
 
                     {/* <MessageList
                       className="message-list"
@@ -177,7 +186,7 @@ class Landing extends Component {
                     <ChatButton
                       text={'send message'} /> */}
                  
-                  </CardPanel>
+                  
 
            
              
