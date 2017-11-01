@@ -63,7 +63,7 @@ class Entries extends Component {
                   placeholder="type your journal entry here"
                 />
 
-                <FormBtn
+                <FormBtn 
                 
                   onClick={this.props.cancel}
                 >

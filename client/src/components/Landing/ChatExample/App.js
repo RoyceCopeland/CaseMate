@@ -97,28 +97,25 @@ export class App extends Component {
                     view: 'list',
                     title: loremIpsum({ count: 2, units: 'words' }),
                     titleColor: this.getRandomColor(),
-                    text: type === 'spotify' ? 'spotify:track:7wGoVu4Dady5GV0Sv4UIsx' : loremIpsum({ count: 1, units: 'sentences' }),
+                    text: loremIpsum({ count: 1, units: 'sentences' }),
                     data: {
-                        uri: `data:image/png;base64,${this.photo(150)}`,
+                        // uri: `data:image/png;base64,${this.photo(150)}`,
                         status: {
                             click: false,
                             loading: 0,
                         },
-                        width: 300,
-                        height: 300,
-                        latitude: '37.773972',
-                        longitude: '-122.431297',
+                     
                     },
-                    status: status,
-                    date: new Date(),
-                    dateString: moment(new Date()).format('HH:mm'),
-                    avatar: `data:image/png;base64,${this.photo()}`,
+                    // status: status,
+                    // date: new Date(),
+                    // dateString: moment(new Date()).format('HH:mm'),
+                    // avatar: `data:image/png;base64,${this.photo()}`,
                 };
             case 'chat':
                 return {
                     id: String(Math.random()),
-                    avatar: `data:image/png;base64,${this.photo()}`,
-                    avatarFlexible: true,
+                    // avatar: `data:image/png;base64,${this.photo()}`,
+                    // avatarFlexible: true,
                     statusColor: 'lightgreen',
                     alt: loremIpsum({ count: 2, units: 'words' }),
                     title: loremIpsum({ count: 2, units: 'words' }),
@@ -173,7 +170,7 @@ export class App extends Component {
                         dataSource={this.state.messageList} />
 
                     <Input
-                        placeholder="This is an input space"
+                        placeholder="Type here"
                         defaultValue=""
                         ref='input'
                         multiline={true}
