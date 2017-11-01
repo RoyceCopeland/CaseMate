@@ -24,7 +24,6 @@ import {
 } from "./Chatbox";
 import App from "./ChatExample/App";
 
-
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
 
@@ -44,6 +43,7 @@ class Landing extends Component {
   state = {
     newEntry: false,
     events: [],
+    componentClasses: ["chat"],
     hidden: true
   };
 
@@ -87,9 +87,9 @@ class Landing extends Component {
       .catch(err => console.log(err));
   };
 
-  toggleCard = (hide) => {
-    this.setState({ hidden: !this.state.hidden})
-  }
+  toggleCard = hide => {
+    this.setState({ hidden: !this.state.hidden });
+  };
 
   render() {
     console.log("state is", this.state.hidden);
@@ -127,101 +127,56 @@ class Landing extends Component {
                   clickHandler={this.handleFormSubmit}
                 />
               ) : (
-                  ""
-                )}
+                ""
+              )}
             </Col>
           </Row>
         </div>
 
         <div>
-
-
           <Row id="chatBox">
             <Col l={3} m={3} s={12} offset={"l8 m8"}>
               <Row>
-              <Col l={12} m={12} s={12} offset={"l8 m8"}>
-                
-               <Card  style={{background:'rgba(0,0,0,0)'}} header={<div className='cardhead' style={{background:'rgba(0,0,0,0)'}} onClick={()=>console.log('click')}></div>}
-                  title="chat"
-                  reveal={<App/>}
-                  onClick={() => {this.toggleCard()}}>
-                  
-              </Card> 
-
-                    {/* <MessageList
-                      className="message-list"
-                      lockable={true}
-                      toBottomHeight={"100%"}
-                      dataSource={[
-                        {
-                          position: "right",
-                          type: "text",
-                          text:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                          date: new Date()
-                        },
-                        {
-                          position: "left",
-                          type: "text",
-                          text:
-                          "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
-                          date: new Date()
-                        }
-
-                      ]}
-
-                    />
-
-
-                    <Input
-                      placeholder="Type here..."
-                      multiline={true}
-                      buttons={
-                        <Button
-                          color='white'
-                          backgroundColor='black'
-                          text='Send' />
-                      } />
-
-                    <ChatButton
-                      text={'send message'} /> */}
-                 
-                  
-
-           
-             
-                  {/* <Popup
-                      show={this.state.show}
-                      header='Lorem ipsum dolor sit amet.'
-                      headerButtons={[{
-                        type: 'transparent',
-                        color: 'black',
-                        text: 'close',
-                        onClick: () => {
-                          this.setState({ show: false })
-                       
-                        }
-                        
-                      }]}
-                      text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!'
-                      footerButtons={[{
-                        color: 'white',
-                        backgroundColor: '#ff5e3e',
-                        text: "Vazgeç",
-                      }, {
-                        color: 'white',
-                        backgroundColor: 'lightgreen',
-                        text: "Tamam",
-                      }]} />      */}
+                <Col l={12} m={12} s={12} offset={"l8 m8"}>
+                  <div
+                    className={this.state.componentClasses.join(" ")}
+                    onClick={() => {
+                      this.setState({ componentClasses: ["chat", "show"] });
+                    }}
+                  >
+                    <span
+                      style={
+                        this.state.componentClasses.includes("show")
+                          ? { display: "none" }
+                          : { display: "block" }
+                      }
+                    >
+                      {" "}
+                      Chat{" "}
+                    </span>
+                    {this.state.componentClasses.includes("show") ? (
+                      <App />
+                    ) : (
+                      ""
+                    )}
+                    <span
+                      className="exit"
+                      style={
+                        this.state.componentClasses.includes("show")
+                          ? { display: "block" }
+                          : { display: "none" }
+                      }
+                      onClick={e => {
+                        e.stopPropagation();
+                        this.setState({ componentClasses: ["chat"] });
+                      }}
+                    >
+                      {" "}
+                      X{" "}
+                    </span>
+                  </div>
                 </Col>
-
               </Row>
-
-
-
-
-
-
             </Col>
           </Row>
         </div>

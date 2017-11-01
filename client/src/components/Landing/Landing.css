@@ -10,9 +10,38 @@
     /* right:-20%; */
 }
 
-.cardhead {
-    height: 200px;
+/* .cardhead {
+    height: 250px;
     visibility: hidden;
     bottom: 0;
-    /* position: fixed; */
-}
+} */
+
+.chat{
+    background: rgb(69, 179, 199);
+    width: 523px;
+    height: 250px;
+    position: fixed;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    transform: translate(0px, 220px);
+    bottom: 0;
+    right: 100px;
+  }
+  
+  .chat.show{
+    transform: translate(0px, 0px);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+  }
+  
+  
+  .exit{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  
