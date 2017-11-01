@@ -2,8 +2,8 @@ let style = {
     
       container: {
         position: 'relative',
-        fontSize: '80%',
-        fontWeight: 300
+        fontSize: '100%',
+        fontWeight: 400
         // padding: '10px 0',
         // width: '33%',
         //margin: '0 auto'
