@@ -30,16 +30,6 @@ import App from "./ChatExample/App";
 class Landing extends Component {
   // Setting our component's initial state
 
-  /*  state = {
-         entries: [
-             {date: "Joe sent something",
-               createdAt: "2016-09-12 10:06 PM",
-               blurb:  "I received the payment for $543. Should be shipping the item within a couple of hours."
-               },
-               {}
-           ]
-     } */
-
   state = {
     newEntry: false,
     events: [],
@@ -96,7 +86,10 @@ class Landing extends Component {
     return (
       <div>
         <div>
-          <Nav click={this.entryClickHandler} deAuth={this.props.deAuth}/>
+          <Nav
+          click={this.entryClickHandler}
+          deAuth={this.props.deAuth}
+          chat={this.props.chat}/>
         </div>
 
         <div>
