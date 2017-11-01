@@ -133,11 +133,11 @@ class Landing extends Component {
           </Row>
         </div>
 
-        <div>
-          <Row id="chatBox">
-            <Col l={3} m={3} s={12} offset={"l8 m8"}>
-              <Row>
-                <Col l={12} m={12} s={12} offset={"l8 m8"}>
+        <div id="chatBox">
+          {/* <Row id="chatBox"> */}
+            {/* <Col l={3} m={3} s={12} offset={"l8 m8"}> */}
+              {/* <Row> */}
+                {/* <Col l={12} m={12} s={12} offset={"l8 m8"}> */}
                   <div
                     className={this.state.componentClasses.join(" ")}
                     onClick={() => {
@@ -145,7 +145,7 @@ class Landing extends Component {
                     }}
                   >
                     <span 
-                    id="chatExpand"
+                    className="chatExpand"
                       style={
                         this.state.componentClasses.includes("show")
                           ? { display: "none" }
@@ -176,10 +176,10 @@ class Landing extends Component {
                       Close{" "}
                     </span>
                   </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+                {/* </Col> */}
+              {/* </Row> */}
+            {/* </Col> */}
+          {/* </Row> */}
         </div>
       </div>
     );

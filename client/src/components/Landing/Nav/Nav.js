@@ -12,7 +12,7 @@ const Nav = props =>
         <a href="#" className="brand-logo" target="_blank">CaseMate Client Portal</a>
         <ul className="right hide-on-med-and-down">
           <li onClick={props.click}><a href="#">New Journal Entry</a></li>
-          <li><a href="#" target="_blank">Chat</a></li>
+          <li onClick={props.click}><a href="#">Chat</a></li>
           <li><a href="#" target="_blank">FAQ</a></li>
           <li onClick={props.deAuth}><a href="#">Log Out</a></li>        </ul>
       </div>
