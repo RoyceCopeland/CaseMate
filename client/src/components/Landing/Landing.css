@@ -4,19 +4,11 @@
 }
 
 #chatBox {
-    position: fixed;
-    width: 90%;
-    bottom: 0;
-    /* right:-20%; */
+   color: white;
 }
 
-/* .cardhead {
-    height: 250px;
-    visibility: hidden;
-    bottom: 0;
-} */
-
 .chat{
+    
     background: rgb(69, 179, 199);
     width: 523px;
     height: 250px;
@@ -28,6 +20,13 @@
     transform: translate(0px, 220px);
     bottom: 0;
     right: 100px;
+    
+  }
+
+  #chatExpand {
+      /* color: white; */
+      top: 10px;
+      left: 10px;
   }
   
   .chat.show{
@@ -36,12 +35,15 @@
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    
   }
   
   
-  .exit{
+  .exit {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 20px;
+    right: 20px;
+    /* color: white; */
+    
   }
   

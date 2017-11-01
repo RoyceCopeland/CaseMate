@@ -144,7 +144,8 @@ class Landing extends Component {
                       this.setState({ componentClasses: ["chat", "show"] });
                     }}
                   >
-                    <span
+                    <span 
+                    id="chatExpand"
                       style={
                         this.state.componentClasses.includes("show")
                           ? { display: "none" }
@@ -172,7 +173,7 @@ class Landing extends Component {
                       }}
                     >
                       {" "}
-                      X{" "}
+                      Close{" "}
                     </span>
                   </div>
                 </Col>
