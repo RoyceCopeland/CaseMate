@@ -25,13 +25,14 @@ class InitialLanding extends Component {
       <div className="bck">
         <Row className='wrapper'>
           <Col l={6} m={6} s={12} offset={"m1 l1"}>
-            <Tabs className='tab-demo z-depth-1'>
-              <Tab title="Sign up" active><SignUp /></Tab>
-              <Tab title="Sign in">
+            <Tabs className='z-depth-1'>
+            <Tab title="Sign in" active>
                 <SignIn
                   submitForm={this.props.submitForm}
                 />
               </Tab>
+              <Tab title="Sign up"><SignUp /></Tab>
+              
             </Tabs>
           </Col>
         </Row>

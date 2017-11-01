@@ -6,7 +6,6 @@ import { Button, Icon, Modal } from 'react-materialize'
 
 const App = () =>
   <Router>
-    
     <div>
       <Switch>
         <Route exact path="/" component={AppWrapper} />

@@ -14,7 +14,7 @@ const Nav = props =>
           <li onClick={props.click}><a href="#">New Journal Entry</a></li>
           <li><a href="#" target="_blank">Chat</a></li>
           <li><a href="#" target="_blank">FAQ</a></li>
-          <li onClick={Auth.deauthenticateUser}><a href="#">Log Out</a></li>        </ul>
+          <li onClick={props.deAuth}><a href="#">Log Out</a></li>        </ul>
       </div>
    
     </div>

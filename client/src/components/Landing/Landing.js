@@ -96,7 +96,7 @@ class Landing extends Component {
     return (
       <div>
         <div>
-          <Nav click={this.entryClickHandler} />
+          <Nav click={this.entryClickHandler} deAuth={this.props.deAuth}/>
         </div>
 
         <div>

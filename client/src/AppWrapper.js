@@ -25,6 +25,12 @@ class AppWrapper extends React.Component {
   // componentDidMount = () => {
   //   Auth.deauthenticateUser();
   // }
+  deAuthenticate = () =>{
+    Auth.deauthenticateUser();
+    this.setState({
+      loggedIn: Auth.isUserAuthenticated()
+    });
+  }
 
   submitForm = () => {
     Auth.authenticateUser("faketoken");
@@ -35,7 +41,7 @@ class AppWrapper extends React.Component {
 
   render = () =>
     this.state.loggedIn ? (
-        <Landing />
+        <Landing deAuth={this.deAuthenticate}/>
     ) : (
       <InitialLanding submitForm={this.submitForm} />
     );
