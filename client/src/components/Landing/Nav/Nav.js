@@ -5,7 +5,7 @@ import Auth from "../../../utils/Auth";
 
 const Nav = props => 
 <div className="navbar-fixed">
-<nav className="cyan darken-1 z-depth-0">
+<nav className="#424242 grey darken-3 z-depth-0">
   <div className="nav-wrapper">
     <div className="row">
       <div className="col s12">

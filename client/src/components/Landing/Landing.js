@@ -73,6 +73,7 @@ class Landing extends Component {
         this.loadEntries();
         this.entryClickHandler();
         this.logOutClickHandler();
+        this.chatClickHandler();
       })
       .catch(err => console.log(err));
   };
@@ -82,19 +83,29 @@ class Landing extends Component {
   };
 
   render() {
-    console.log("state is", this.state.hidden);
+    // console.log("state is", this.state.hidden);
     return (
       <div>
         <div>
           <Nav
-          click={this.entryClickHandler}
-          deAuth={this.props.deAuth}
-          chat={this.props.chat}/>
+            click={this.entryClickHandler}
+            deAuth={this.props.deAuth}
+            chat={this.props.chat}
+          />
         </div>
 
         <div>
+        {this.state.newEntry ? (
+                <Entries
+                  cancel={this.entryClickHandler}
+                  clickHandler={this.handleFormSubmit}
+                />
+              ) : (
+                ""
+              )}
+         
           <Row id="TimelineBlock">
-            <Col l={5} m={6} s={12} offset={"l1 m1"} className="Timeline">
+          <Col l={5} m={5} s={12} offset={"l1 m1"}>
               <Timeline onMouseMove={this.handleMouseMove}>
                 {/*Use map here through this.state.entries*/}
 
@@ -112,68 +123,86 @@ class Landing extends Component {
                   </TimelineEvent>
                 ))}
               </Timeline>
-            </Col>
-            <Col l={5} m={6} s={10} offset={"l1 m1"}>
-              {this.state.newEntry ? (
-                <Entries
-                  cancel={this.entryClickHandler}
-                  clickHandler={this.handleFormSubmit}
-                />
-              ) : (
-                ""
-              )}
-            </Col>
+              </Col>
+            {/* <Col l={5} m={6} s={10} offset={"l1 m1"}> */}
+              
+
+              <div id="chatBox">
+                <div
+                  className={this.state.componentClasses.join(" ")}
+                  onClick={() => {
+                    this.setState({ componentClasses: ["chat", "show"] });
+                  }}
+                >
+                  <span
+                    className="chatExpand"
+                    style={
+                      this.state.componentClasses.includes("show")
+                        ? { display: "none" }
+                        : { display: "block" }
+                    }
+                  >
+                    {" "}
+                    Chat{" "}
+                  </span>
+                  {this.state.componentClasses.includes("show") ? <App /> : ""}
+                  <span
+                    className="exit"
+                    style={
+                      this.state.componentClasses.includes("show")
+                        ? { display: "block" }
+                        : { display: "none" }
+                    }
+                    onClick={e => {
+                      e.stopPropagation();
+                      this.setState({ componentClasses: ["chat"] });
+                    }}
+                  >
+                    {" "}
+                    Close{" "}
+                  </span>
+                </div>
+              </div>
+            {/* </Col> */}
           </Row>
         </div>
 
-        <div id="chatBox">
-          {/* <Row id="chatBox"> */}
-            {/* <Col l={3} m={3} s={12} offset={"l8 m8"}> */}
-              {/* <Row> */}
-                {/* <Col l={12} m={12} s={12} offset={"l8 m8"}> */}
-                  <div
-                    className={this.state.componentClasses.join(" ")}
-                    onClick={() => {
-                      this.setState({ componentClasses: ["chat", "show"] });
-                    }}
-                  >
-                    <span 
-                    className="chatExpand"
-                      style={
-                        this.state.componentClasses.includes("show")
-                          ? { display: "none" }
-                          : { display: "block" }
-                      }
-                    >
-                      {" "}
-                      Chat{" "}
-                    </span>
-                    {this.state.componentClasses.includes("show") ? (
-                      <App />
-                    ) : (
-                      ""
-                    )}
-                    <span
-                      className="exit"
-                      style={
-                        this.state.componentClasses.includes("show")
-                          ? { display: "block" }
-                          : { display: "none" }
-                      }
-                      onClick={e => {
-                        e.stopPropagation();
-                        this.setState({ componentClasses: ["chat"] });
-                      }}
-                    >
-                      {" "}
-                      Close{" "}
-                    </span>
-                  </div>
-                {/* </Col> */}
-              {/* </Row> */}
-            {/* </Col> */}
-          {/* </Row> */}
-        </div>
+        {/* <div id="chatBox">
+          <div
+            className={this.state.componentClasses.join(" ")}
+            onClick={() => {
+              this.setState({ componentClasses: ["chat", "show"] });
+            }}
+          >
+            <span
+              className="chatExpand"
+              style={
+                this.state.componentClasses.includes("show")
+                  ? { display: "none" }
+                  : { display: "block" }
+              }
+            >
+              {" "}
+              Chat{" "}
+            </span>
+            {this.state.componentClasses.includes("show") ? <App /> : ""}
+            <span
+              className="exit"
+              style={
+                this.state.componentClasses.includes("show")
+                  ? { display: "block" }
+                  : { display: "none" }
+              }
+              onClick={e => {
+                e.stopPropagation();
+                this.setState({ componentClasses: ["chat"] });
+              }}
+            >
+              {" "}
+              Close{" "}
+            </span>
+          </div>
+        </div> */}
       </div>
     );
   }

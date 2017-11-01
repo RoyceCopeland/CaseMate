@@ -36,8 +36,8 @@ class Entries extends Component {
     return (
       <div className="new-entry">
         <Container fluid>
-          <Row>
-            <Col size="md-6">
+          <Row className="entryBlock">
+            <Col size="md-6 sm-12">
 
               <h5>New Journal Entry</h5>
 
@@ -47,8 +47,6 @@ class Entries extends Component {
                   onChange={this.handleInputChange}
                   name="date"
                   type='date'
-                //  date='Date'
-                  //placeholder=''
                 />
                 <Input
                   value={this.state.title}
