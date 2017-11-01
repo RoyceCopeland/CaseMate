@@ -61,6 +61,11 @@ class Landing extends Component {
     this.setState({ newEntry: !this.state.newEntry });
   };
 
+  showChatClickHandler = () => {
+    console.log("showChat hit")
+    this.setState({ componentClasses: ["chat", "show"] });
+  };
+
   handleFormSubmit = (date, title, body) => {
     API.saveEntry({
       date: date,
@@ -72,8 +77,8 @@ class Landing extends Component {
       .then(() => {
         this.loadEntries();
         this.entryClickHandler();
-        this.logOutClickHandler();
-        this.chatClickHandler();
+     //   this.logOutClickHandler();
+      //  this.showChatClickHandler();
       })
       .catch(err => console.log(err));
   };
@@ -90,7 +95,8 @@ class Landing extends Component {
           <Nav
             click={this.entryClickHandler}
             deAuth={this.props.deAuth}
-            chat={this.props.chat}
+          //  chat={this.props.showChat}
+          showChatHandler={this.showChatClickHandler}
           />
         </div>
 
