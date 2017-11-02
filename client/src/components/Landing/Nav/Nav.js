@@ -1,6 +1,7 @@
 import React from "react";
 //import App from "./EntriesPage/App";
 import Auth from "../../../utils/Auth";
+import "./Nav.css"
 
 
 const Nav = props => 
@@ -9,17 +10,14 @@ const Nav = props =>
   <div className="nav-wrapper">
     <div className="row">
       <div className="col s12">
-        <a href="#" className="brand-logo" target="_blank">CaseMate Client Portal</a>
+        <a href="#" className="brand-logo"></a>
         <ul className="right hide-on-med-and-down">
           <li onClick={props.click}><a href="#">New Journal Entry</a></li>
           <li onClick={props.showChatHandler}><a>Chat</a></li>
-          <li><a href="#" target="_blank">FAQ</a></li>
-          <li onClick={props.deAuth}><a href="#">Log Out</a></li>        </ul>
+          <li onClick={props.deAuth}><a href="#">Log Out</a></li></ul>
       </div>
    
     </div>
- {console.log("these are the props in the Nav", props)
-
  }
  
   </div>

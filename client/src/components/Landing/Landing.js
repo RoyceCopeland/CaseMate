@@ -2,26 +2,10 @@ import React, { Component } from "react";
 import { Button, Icon, Modal, CardPanel } from "react-materialize";
 import Nav from "./Nav";
 import API from "../../utils/API";
-
 import { Timeline, TimelineEvent, TimelineBlip } from "./Timeline";
 import Entries from "./EntriesPage";
 import "./Landing.css";
 import { Row, Col, Card, Carddate, Tabs, Tab } from "react-materialize";
-import {
-  MessageBox,
-  ChatItem,
-  SystemMessage,
-  ChatList,
-  MessageList,
-  Input,
-  ChatButton,
-  Avatar,
-  Navbar,
-  Dropdown,
-  SideBar,
-  Popup,
-  PhotoMessage
-} from "./Chatbox";
 import App from "./ChatExample/App";
 
 // The ...props means, spread all of the passed props onto this element

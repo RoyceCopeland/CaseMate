@@ -6,6 +6,7 @@
 }
 .button-signin {
   margin-right: 20px;
+  background: red;
 }
 
 .bck {
@@ -14,4 +15,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.tab {
+  color: rgb(64, 64, 65);
 }

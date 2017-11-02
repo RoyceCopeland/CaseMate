@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import {
-    MessageBox,
+  //  MessageBox,
     ChatItem,
     ChatList,
-    SystemMessage,
+ //   SystemMessage,
     MessageList,
     Input,
     ChatButton,
-    Avatar,
-    Navbar,
-    SideBar,
-    Dropdown,
-    Popup,
+  //  Avatar,
+ //   Navbar,
+ //   SideBar,
+  //  Dropdown,
+ //   Popup,
 } from '../Chatbox';
 import './App.css';
 
@@ -96,20 +96,20 @@ export class App extends Component {
                     theme: 'white',
                     view: 'list',
                     title: loremIpsum({ count: 2, units: 'words' }),
-                    titleColor: this.getRandomColor(),
+                   // titleColor: this.getRandomColor(),
                     text: loremIpsum({ count: 1, units: 'sentences' }),
                     data: {
-                        // uri: `data:image/png;base64,${this.photo(150)}`,
+                       //  uri: `data:image/png;base64,${this.photo(150)}`,
                         status: {
                             click: false,
                             loading: 0,
                         },
                      
                     },
-                    // status: status,
+                    status: status,
                     // date: new Date(),
                     // dateString: moment(new Date()).format('HH:mm'),
-                    // avatar: `data:image/png;base64,${this.photo()}`,
+                    avatar: `data:image/png;base64,${this.photo()}`,
                 };
             case 'chat':
                 return {
@@ -122,23 +122,23 @@ export class App extends Component {
                     date: new Date(),
                     subtitle: loremIpsum({ count: 1, units: 'sentences' }),
                     unread: parseInt(Math.random() * 10 % 3),
-                    dropdownMenu: (
-                        <Dropdown
-                            animationPosition="norteast"
-                            ChatButtonProps={{
-                                type: "transparent",
-                                color: "#cecece",
-                                icon: {
-                                    component: <FaMenu />,
-                                    size: 24,
-                                }
-                            }}
-                            items={[
-                                'Menu Item1',
-                                'Menu Item2',
-                                'Menu Item3',
-                            ]} />
-                    ),
+                    // dropdownMenu: (
+                    //     <Dropdown
+                    //         animationPosition="norteast"
+                    //         ChatButtonProps={{
+                    //             type: "transparent",
+                    //             color: "#cecece",
+                    //             icon: {
+                    //                 component: <FaMenu />,
+                    //                 size: 24,
+                    //             }
+                    //         }}
+                    //         items={[
+                    //             'Menu Item1',
+                    //             'Menu Item2',
+                    //             'Menu Item3',
+                    //         ]} />
+                    // ),
                     dateString: moment(new Date()).format('HH:mm'),
                 };
         }
