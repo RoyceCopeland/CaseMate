@@ -76,10 +76,10 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Royce Copeland** - [GitHub](https://github.com/RoyceCopeland)
-* **Josh Dodd**  - [GitHub](https://github.com/joshuadodd)
+* [**Royce Copeland**](https://github.com/RoyceCopeland)
+* [**Josh Dodd**](https://github.com/joshuadodd)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
 ## License
 
@@ -88,11 +88,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * THANK YOU to my wife for her ongoing support and encouragement.
+* Big thanks to Josh Dodd for hanging in there with me.
 * Standing Ovation to [**CJ Jordan**](https://github.com/CjJordan) and [**Hannah Patellis**](https://github.com/hannahpatellis) for their perpetual enthusiasm and patience as both coders and teachers.
 
-![GitHub Logo](../img/justice_bkgnd.jpg)
-Format: ![Alt Text](url)
+<!-- ![GitHub Logo](../img/justice_bkgnd.jpg)
+Format: ![Alt Text](url) -->
 
 
-[http://case-mate.herokuapp.com/#](http://case-mate.herokuapp.com/# "CaseMate's homepage")
+[Check out CaseMate's ongoing progress on Heroku](http://case-mate.herokuapp.com/#)
 
