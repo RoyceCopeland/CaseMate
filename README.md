@@ -1,20 +1,19 @@
 # CaseMate
 ## Overview
 
-CaseMate will provide an effective client portal system that follows agile development methodology. The intent is to provide a service that helps clients store case-related data.
+Created with law firms in mind, CaseMate's core functionality vision is a mobile, secure, and user-friendly client portal for the day-to-day journaling and archiving of all case-related data, as well as facilitating easy and direct communication between client and case manager/lawyer.
 
-Here's our logo (hover to see the title text):
+Here's our logo!
 
-Inline-style: 
-![alt text](https://github.com/RoyceCopeland/CaseMate/tree/master/client/public/img/CaseMate_logo.png "Logo Title Text 1")
+![CaseMate](https://github.com/RoyceCopeland/CaseMate/tree/master/client/public/img/CaseMate_logo.png "CaseMate")
 
-## Getting Started
+<!-- ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+What what what aht things you need to install the software and how to install them
 
 ```
 Give examples
@@ -60,25 +59,25 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Add additional notes about how to deploy this on a live system -->
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [React](https://reactjs.org/) - Framework
+* [MongoDB](https://www.mongodb.com/) - Database
 
-## Contributing
+<!-- ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Royce Copeland** - [GitHub](https://github.com/RoyceCopeland)
+* **Josh Dodd**  - [GitHub](https://github.com/joshuadodd)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
@@ -88,9 +87,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* THANK YOU to my wife for her ongoing support and encouragement.
+* Standing Ovation to [**CJ Jordan**](https://github.com/CjJordan) and [**Hannah Patellis**](https://github.com/hannahpatellis) for their perpetual enthusiasm and patience as both coders and teachers.
 
 ![GitHub Logo](../img/justice_bkgnd.jpg)
 Format: ![Alt Text](url)
