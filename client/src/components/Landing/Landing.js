@@ -29,12 +29,12 @@ import App from "./ChatExample/App";
 
 class Landing extends Component {
   // Setting our component's initial state
-
   state = {
     newEntry: false,
     events: [],
     componentClasses: ["chat"],
-    hidden: true
+    hidden: true,
+    showChat: false
   };
 
   // When the component mounts, load all component data and save them to this.state.landing
@@ -62,8 +62,17 @@ class Landing extends Component {
   };
 
   showChatClickHandler = () => {
-    console.log("showChat hit")
-    this.setState({ componentClasses: ["chat", "show"] });
+    if (this.state.showChat) {
+      this.setState({
+        componentClasses: ["chat"],
+        showChat: !this.state.showChat
+      });
+    } else {
+      this.setState({
+        componentClasses: ["chat", "show"],
+        showChat: !this.state.showChat
+      });
+    }
   };
 
   handleFormSubmit = (date, title, body) => {
@@ -77,8 +86,6 @@ class Landing extends Component {
       .then(() => {
         this.loadEntries();
         this.entryClickHandler();
-     //   this.logOutClickHandler();
-      //  this.showChatClickHandler();
       })
       .catch(err => console.log(err));
   };
@@ -88,30 +95,28 @@ class Landing extends Component {
   };
 
   render() {
-    // console.log("state is", this.state.hidden);
     return (
       <div>
         <div>
           <Nav
             click={this.entryClickHandler}
             deAuth={this.props.deAuth}
-          //  chat={this.props.showChat}
-          showChatHandler={this.showChatClickHandler}
+            showChatHandler={this.showChatClickHandler}
           />
         </div>
 
         <div>
-        {this.state.newEntry ? (
-                <Entries
-                  cancel={this.entryClickHandler}
-                  clickHandler={this.handleFormSubmit}
-                />
-              ) : (
-                ""
-              )}
-         
+          {this.state.newEntry ? (
+            <Entries
+              cancel={this.entryClickHandler}
+              clickHandler={this.handleFormSubmit}
+            />
+          ) : (
+            ""
+          )}
+
           <Row id="TimelineBlock">
-          <Col l={5} m={5} s={12} offset={"l1 m1"}>
+            <Col l={5} m={5} s={12} offset={"l1 m1"}>
               <Timeline onMouseMove={this.handleMouseMove}>
                 {/*Use map here through this.state.entries*/}
 
@@ -129,86 +134,52 @@ class Landing extends Component {
                   </TimelineEvent>
                 ))}
               </Timeline>
-              </Col>
-            {/* <Col l={5} m={6} s={10} offset={"l1 m1"}> */}
-              
+            </Col>
 
-              <div id="chatBox">
-                <div
-                  className={this.state.componentClasses.join(" ")}
-                  onClick={() => {
-                    this.setState({ componentClasses: ["chat", "show"] });
+            <div id="chatBox">
+              <div
+                className={this.state.componentClasses.join(" ")}
+                onClick={() => {
+                  this.setState({
+                    componentClasses: ["chat", "show"],
+                    showChat: !this.state.showChat
+                  });
+                }}
+              >
+                <span
+                  className="chatExpand"
+                  style={
+                    this.state.componentClasses.includes("show")
+                      ? { display: "none" }
+                      : { display: "block" }
+                  }
+                >
+                  {" "}
+                  Chat{" "}
+                </span>
+                {this.state.componentClasses.includes("show") ? <App /> : ""}
+                <span
+                  className="exit"
+                  style={
+                    this.state.componentClasses.includes("show")
+                      ? { display: "block" }
+                      : { display: "none" }
+                  }
+                  onClick={e => {
+                    e.stopPropagation();
+                    this.setState({
+                      componentClasses: ["chat"],
+                      showChat: !this.state.showChat
+                    });
                   }}
                 >
-                  <span
-                    className="chatExpand"
-                    style={
-                      this.state.componentClasses.includes("show")
-                        ? { display: "none" }
-                        : { display: "block" }
-                    }
-                  >
-                    {" "}
-                    Chat{" "}
-                  </span>
-                  {this.state.componentClasses.includes("show") ? <App /> : ""}
-                  <span
-                    className="exit"
-                    style={
-                      this.state.componentClasses.includes("show")
-                        ? { display: "block" }
-                        : { display: "none" }
-                    }
-                    onClick={e => {
-                      e.stopPropagation();
-                      this.setState({ componentClasses: ["chat"] });
-                    }}
-                  >
-                    {" "}
-                    Close{" "}
-                  </span>
-                </div>
+                  {" "}
+                  Close{" "}
+                </span>
               </div>
-            {/* </Col> */}
+            </div>
           </Row>
         </div>
-
-        {/* <div id="chatBox">
-          <div
-            className={this.state.componentClasses.join(" ")}
-            onClick={() => {
-              this.setState({ componentClasses: ["chat", "show"] });
-            }}
-          >
-            <span
-              className="chatExpand"
-              style={
-                this.state.componentClasses.includes("show")
-                  ? { display: "none" }
-                  : { display: "block" }
-              }
-            >
-              {" "}
-              Chat{" "}
-            </span>
-            {this.state.componentClasses.includes("show") ? <App /> : ""}
-            <span
-              className="exit"
-              style={
-                this.state.componentClasses.includes("show")
-                  ? { display: "block" }
-                  : { display: "none" }
-              }
-              onClick={e => {
-                e.stopPropagation();
-                this.setState({ componentClasses: ["chat"] });
-              }}
-            >
-              {" "}
-              Close{" "}
-            </span>
-          </div>
-        </div> */}
       </div>
     );
   }

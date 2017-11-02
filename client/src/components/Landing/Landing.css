@@ -1,48 +1,42 @@
-
 .Timeline {
-    margin-top: 19px;
+  margin-top: 19px;
 }
 
 #chatBox {
-   color: white;
+  color: white;
 }
 
-.chat{
-    
-    background: rgb(64, 64, 65);
-    width: 508px;
-    height: 260px;
-    position: fixed;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    transform: translate(0px, 220px);
-    bottom: 0;
-    right: 100px;
-    
-  }
+.chat {
+  background: rgb(64, 64, 65);
+  width: 508px;
+  height: 260px;
+  position: fixed;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  transform: translate(0px, 220px);
+  bottom: 0;
+  right: 100px;
+}
 
-  .chatExpand {
-text-align: center;
-margin-top: 10px;
+.chatExpand {
+  cursor:pointer;
+  text-align: center;
+  margin-top: 10px;
+}
 
-  }
-  
-  .chat.show{
-    transform: translate(0px, 0px);
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-    
-  }
-  
-  
-  .exit {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    
-  }
-  
+.chat.show {
+  transform: translate(0px, 0px);
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.exit {
+  cursor:pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
